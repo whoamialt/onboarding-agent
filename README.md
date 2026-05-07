@@ -87,9 +87,7 @@ onboarding-agent/
 │   └── onboarding-principles.md     The doctrine
 └── docs/
     ├── agent-primer.md      The workshop curriculum, written up
-    ├── why-this-shape.md    Every design decision, with the why
-    ├── one-pager.md         The single-page summary
-    └── recap-email.md       The email draft
+    └── why-this-shape.md    Every design decision, with the why
 ```
 
 Lattice Loom and everyone in it is fictional. Any resemblance to a real company is coincidental.
@@ -222,12 +220,11 @@ Drop a markdown file into `.claude/commands/`. Use the existing skills as a shap
 
 If you came from the workshop:
 
-1. **Read [docs/one-pager.md](docs/one-pager.md)** — five-minute refresh.
-2. **Run the agent** — clone, open in your runtime, run `/learn-company lattice-loom marcus-chen`. See the structure work.
-3. **Read [docs/why-this-shape.md](docs/why-this-shape.md)** — every design decision in this repo, with the why. Use it when you build your own.
-4. **Pick the workflow you do most** — not the most interesting one, the most repetitive — and write a 30-line `CLAUDE.md` or `AGENTS.md` for it.
-5. **Write one skill.** Under 80 lines. Use the existing skills as shape reference.
-6. **Run it three times** on three different inputs. Tighten until the variance is in the right places (creativity) and not the wrong ones (procedure).
+1. **Run the agent.** Clone, open in your runtime, run `/learn-company lattice-loom marcus-chen`. See the structure work.
+2. **Read [docs/why-this-shape.md](docs/why-this-shape.md).** Every design decision in this repo, with the why. Use it when you build your own.
+3. **Pick the workflow you do most.** Not the most interesting one, the most repetitive. Write a 30-line `CLAUDE.md` or `AGENTS.md` for it.
+4. **Write one skill.** Under 80 lines. Use the existing skills as shape reference.
+5. **Run it three times** on three different inputs. Tighten until the variance is in the right places (creativity) and not the wrong ones (procedure).
 
 If you're stuck, send me what you tried and where it broke. I learn most from where people get stuck.
 
@@ -237,8 +234,6 @@ If you're stuck, send me what you tried and where it broke. I learn most from wh
 
 - **[docs/agent-primer.md](docs/agent-primer.md)** — the full workshop curriculum, written up
 - **[docs/why-this-shape.md](docs/why-this-shape.md)** — every design choice in this repo, with reasoning
-- **[docs/one-pager.md](docs/one-pager.md)** — single-page summary
-- **[docs/recap-email.md](docs/recap-email.md)** — the email that brought you here
 
 ## Resources
 
