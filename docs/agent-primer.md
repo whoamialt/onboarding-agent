@@ -204,13 +204,21 @@ If all four are yes, ship it.
 
 [github.com/anthropics/skills](https://github.com/anthropics/skills) — official examples. Read three or four of them. The pattern will click.
 
+### Gooseworks skills directory
+
+[skills.gooseworks.ai](https://skills.gooseworks.ai/) — searchable catalog of community skills. Browse it like a cookbook. You'll start to see the patterns repeat across very different domains.
+
+### Andrej Karpathy skills (community pack)
+
+[github.com/forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) — community-built skills modeled on Karpathy's teaching style. Useful as a shape reference if you want to encode pedagogical structure into a skill.
+
 ### Caveman (cross-platform skill management)
 
 [github.com/juliusbrussee/caveman](https://github.com/juliusbrussee/caveman) — third-party tool that helps you manage skills across multiple agent runtimes. Worth a look if you're going multi-platform.
 
 ### This repo
 
-[github.com/sophielemieux/onboarding-agent](https://github.com/sophielemieux/onboarding-agent) — the agent we built in the workshop. Clone it, run it, fork it, rebuild it for your own workflow.
+[github.com/whoamialt/onboarding-agent](https://github.com/whoamialt/onboarding-agent) — the agent we built in the workshop. Clone it, run it, fork it, rebuild it for your own workflow.
 
 ### My writing
 
