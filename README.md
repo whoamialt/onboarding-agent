@@ -28,7 +28,7 @@ If yes, write it down. The "writing it down" part is the agent.
 
 Loosely in the order it happened:
 
-1. **What an agent actually is** — a loop with judgment, tools, and boundaries. We anchored every later concept against this.
+1. **What an agent is** — a loop with judgment, tools, and boundaries. We anchored every later concept against this.
 
 2. **The three levels** — global rules → project rules → skills. Different runtimes call them different things, but the mental model is the same across Claude Code, Codex, Antigravity, ChatGPT.
 

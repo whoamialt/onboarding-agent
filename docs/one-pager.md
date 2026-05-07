@@ -8,7 +8,7 @@
 
 ## What we did today
 
-Two weeks ago we did the theory session — what an agent is, when to build one, how teams should work alongside them. The feedback from the survey was clear: thanks for the theory, now show us how to actually build one. So today was the live build.
+Two weeks ago we did the theory session — what an agent is, when to build one, how teams should work alongside them. The feedback from the survey was clear: thanks for the theory, now show us how to build one. So today was the live build.
 
 We picked onboarding because almost everyone in the room has a version of it on their plate. I built the agent from scratch in Claude Code while you watched — fictional company, fictional new hire, five skills, two human checkpoints, no real client info anywhere on screen.
 
@@ -52,7 +52,7 @@ If you only read one doc inside the repo, read [`docs/why-this-shape.md`](https:
 
 ---
 
-## How I actually run it
+## How I run it
 
 ### Model + effort level
 
@@ -70,7 +70,7 @@ I scale effort with how much reasoning the work needs: **high** for synthesis an
 
 **The flow I usually run:** plan mode while I'm designing the agent (or anything new) → ask permissions for day-to-day execution → auto mode only for the most well-tested procedures.
 
-Plan mode isn't about safety — it's about *calibration.* It forces the agent to articulate what it's about to do before it does it, so you catch wrong assumptions before they become wrong outputs.
+Plan mode is calibration, not safety. It forces the agent to articulate what it's about to do before it does it, so you catch wrong assumptions before they become wrong outputs.
 
 ### Dispatch — Claude Code on your phone
 
@@ -86,15 +86,15 @@ It keeps the oversight without keeping me chained to the screen. Honestly a litt
 
 **Are these `.md` files Claude-generated, or do I have to add params?**
 
-Both work. You can copy a skill from a public library and use it as-is, but I almost never do that — the institutional knowledge is the whole point. What I do instead is work with Claude directly. I tell it what I want a skill to do, what templates I already use, what tone, what checkpoints I want. Then we build it together. The result is a skill that reflects how I actually work, not how someone else's job worked.
+Both work. You can copy a skill from a public library and use it as-is, but I almost never do that — the institutional knowledge is the whole point. What I do instead is work with Claude directly. I tell it what I want a skill to do, what templates I already use, what tone, what checkpoints I want. Then we build it together. The result is a skill that reflects how I work, not how someone else's job worked.
 
-The trap I see: people download every skill they can find. Don't do that. It's like starting a new job and being given every internal doc from every team — you remember none of it and use less of it. Build the skills you'll actually use. Three good ones beat fifty downloaded ones.
+The trap I see: people download every skill they can find. Don't do that. It's like starting a new job and being given every internal doc from every team — you remember none of it and use less of it. Build the skills you'll use. Three good ones beat fifty downloaded ones.
 
 **My Pro plan runs out of tokens running one daily agent — am I doing something wrong?**
 
 Probably not, but it depends. How many MCPs is the agent connected to? How big is the context window? How heavy is the task? An agent that pings five tools, reads ten files, and runs a multi-step decision will eat through a Pro plan.
 
-The first thing I'd try is **[Caveman](https://github.com/juliusbrussee/caveman)** — a skill (and a discipline) for compressing prompts and tightening what gets loaded into context. Install it if your context windows are running long. It's the single highest-leverage thing for keeping token usage sane.
+The first thing I'd try is **[Caveman](https://github.com/juliusbrussee/caveman)** — a skill (and a discipline) for compressing prompts and tightening what gets loaded into context. Install it if your context windows are running long. It's the highest-leverage thing for keeping token usage sane.
 
 Beyond that, Anthropic's plans are roughly Pro at $20/month, the 5x at ~$100, Max at $200, then enterprise. The Max plan isn't unreasonable in a building phase — I'm running Max while I'm actively building and expect that to drop once the heavy build is done. Investing more during the build phase is fine; you'll do less of it in steady state.
 
@@ -106,19 +106,19 @@ Beyond that, Anthropic's plans are roughly Pro at $20/month, the 5x at ~$100, Ma
 
 **Who he is.** Co-founder of OpenAI. Former director of AI at Tesla. Taught Stanford's CS231n (the deep learning class everyone has watched). Now runs Eureka Labs — an AI-native education company. Posts on X as [@karpathy](https://x.com/karpathy). Blog at [karpathy.ai](https://karpathy.ai).
 
-**Why everyone talks about him.** He's the single most-recommended AI educator on the internet, and the reason is simple: he explains how this stuff actually works in a way that's clear AND deep. Most teachers pick one — clear OR deep. He does both. Watching him is the closest thing to "having a real-world model installed in your head" without doing a CS degree.
+**Why everyone talks about him.** He's the most-recommended AI educator on the internet, and the reason is simple: he can be both clear and deep. Most teachers pick one. He does both. Watching him is the closest thing to having a real-world model installed in your head without doing a CS degree.
 
-**What to watch first.** His **Intro to LLMs** lecture (~1hr on YouTube — search "Karpathy Intro to LLMs"). It will change how you think about everything else in this space. No math required, no programming background needed. By the end you'll understand what a model actually is, why prompts work the way they do, and why some agents fail in ways that will start to feel obvious.
+**What to watch first.** His **Intro to LLMs** lecture (~1hr on YouTube — search "Karpathy Intro to LLMs"). It will change how you think about everything else in this space. No math required, no programming background needed. By the end you'll understand what a model is, why prompts work the way they do, and why some agents fail in ways that will start to feel obvious.
 
 **If you want to go deeper.** His **Zero to Hero** series — eight YouTube videos that build a language model from scratch in Python. Save it for when you want to know the engineering side.
 
 ### The course I took and recommend
 
-**[HuggingFace Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)** — the most thorough free course on agents. Goes from first principles up through multi-agent and tool use. I took it because I wanted to make sure my mental models matched what serious researchers in the space were teaching. They mostly did, with a few useful sharpenings. If you want to get serious about building agents, this is where I'd start.
+**[HuggingFace Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)** — the most thorough free course on agents. Goes from first principles up through multi-agent and tool use. I took it because I wanted to make sure my mental models matched what serious researchers in the space were teaching. They mostly did, with a few corrections worth the time. If you want to get serious about building agents, this is where I'd start.
 
 ### The podcast I listen to most
 
-**[How I AI](https://www.youtube.com/@howiaipodcast)** — practitioners showing how they actually use AI day to day. Not "AI is changing the world" hype — just how they work. Start with [this episode](https://www.youtube.com/watch?v=LJ1YZ3Uek3g), then browse.
+**[How I AI](https://www.youtube.com/@howiaipodcast)** — practitioners showing how they use AI day to day. Not "AI is changing the world" hype — just how they work. Start with [this episode](https://www.youtube.com/watch?v=LJ1YZ3Uek3g), then browse.
 
 ### Skill libraries
 
@@ -133,7 +133,7 @@ Beyond that, Anthropic's plans are roughly Pro at $20/month, the 5x at ~$100, Ma
 
 ### On X (the tight list)
 
-- **[@karpathy](https://x.com/karpathy)** — Andrej. Teaches in posts. The single most-followable account in this space.
+- **[@karpathy](https://x.com/karpathy)** — Andrej. Teaches in posts. The most-followable account in this space.
 - **[@simonw](https://x.com/simonw)** — Simon Willison. Builds AI tools daily, blogs every one. Practical, opinionated, prolific.
 - **[@emollick](https://x.com/emollick)** — Ethan Mollick, Wharton prof. Best account for AI-in-work framing without engineering depth. His Substack (One Useful Thing) is great too.
 - **[@goodside](https://x.com/goodside)** — Riley Goodside. Prompt engineering practitioner. Gets weird with models in instructive ways.
@@ -160,7 +160,7 @@ For short bites that aren't TikTok, subscribe to **The Rundown AI** — daily em
 2. **Decide what shape it needs.** Chat? Workflow? Agent? Default to workflow. Step up to agent only if it has to adapt.
 3. **If it's an agent — clone the repo we built.** Read the README. Run it once with the fake company so you see the structure work. Then start copying the shape onto your real workflow.
 4. **Write one skill.** Under 80 lines. Use the existing skills as the shape guide. Tell the agent your *brief definition of done* in the prompt — this is the single coaching tip that has saved me the most rework.
-5. **Run it three times on three different inputs.** Tighten until the variance is in the right places — creativity, not procedure.
+5. **Run it three times on three different inputs.** Tighten until variance lives in the creativity, not the procedure.
 
 Don't try to build a system upfront. The system shows up after the third or fourth skill, when patterns start to repeat.
 

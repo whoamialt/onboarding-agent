@@ -16,7 +16,7 @@ If yes, write it down. The "writing it down" part is the agent.
 
 ---
 
-## What an agent actually is
+## What an agent is
 
 An agent is **a loop with judgment, tools, and boundaries.**
 
@@ -95,7 +95,7 @@ You hand the agent a goal and a starting context. The model reads the context. I
 
 ---
 
-## What a skill actually is
+## What a skill is
 
 A skill is a markdown file that tells the agent *how to do one specific job.* Not what — how.
 
@@ -200,7 +200,7 @@ If you want to try it, start with a `multi-platform-orchestration/` folder where
 
 ---
 
-## How to actually run an agent — the three modes
+## How to run an agent — the three modes
 
 Every agent runtime I've used has three running modes. Knowing which to use when is a small thing that saves you a lot of rework.
 
@@ -265,7 +265,7 @@ If all four are yes, ship it.
 
 ### My favorite podcast on this
 
-[How I AI](https://www.youtube.com/@howiaipodcast) — practitioners walking through how they actually use AI day-to-day. Start with [this episode](https://www.youtube.com/watch?v=LJ1YZ3Uek3g).
+[How I AI](https://www.youtube.com/@howiaipodcast) — practitioners walking through how they use AI day-to-day. Start with [this episode](https://www.youtube.com/watch?v=LJ1YZ3Uek3g).
 
 ### The agents course I took and recommend
 
@@ -283,7 +283,7 @@ If you've never built an agent before, in this order:
 4. **Run it three times.** On three different inputs. See where it varies and where it's consistent. Tighten the body until the variance is in the right places (creativity) and not the wrong ones (procedure).
 5. **Add a second skill.** When the first one feels like it works.
 
-Don't try to build a whole system upfront. The system emerges from skills you actually use. The ones you don't use, delete.
+Don't try to build a whole system upfront. The system emerges from skills you use. The ones you don't use, delete.
 
 ---
 

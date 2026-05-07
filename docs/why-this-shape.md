@@ -102,7 +102,7 @@ For your own agents: **think about your worst-case wrong action and where the ag
 
 ## Why mock-sends are printed strings, not real API calls
 
-The skills print `[mock] DocuSign envelope sent` instead of actually calling DocuSign. For this demo:
+The skills print `[mock] DocuSign envelope sent` instead of calling DocuSign. For this demo:
 
 - **Reliability.** Live API calls fail in front of audiences. Auth tokens expire. Networks blip. None of that is the lesson, all of it derails the lesson.
 - **Resettability.** I can re-run the demo back-to-back without sending five real DocuSign envelopes to my own email.
@@ -134,7 +134,7 @@ Look at `intake.md` for Marcus. There's a paragraph:
 
 I added that on purpose. It tests whether the agent surfaces personal context into the plan (it should — the start of week 2 daycare drop-off shouldn't collide with the 9am all-hands). It's the kind of detail that real intakes contain and that real onboarding fails to handle.
 
-For your own agents: **build your test cases with friction.** Make the data hard. The agent that handles a perfect intake well is not the agent you actually need.
+For your own agents: **build your test cases with friction.** Make the data hard. The agent that handles a perfect intake well is not the agent you need.
 
 ---
 
@@ -156,7 +156,7 @@ The reason isn't ideological — it's about decision rights. The agent doesn't h
 
 But the *pattern* — two hires said the same thing — is a clean signal the agent absolutely can produce. Surfacing the signal lets the human make the decision with the data the agent assembled.
 
-For your own agents: **let the agent do the part it's actually better at than humans.** Pattern-matching across many inputs is one of those parts. Org-level decision-making is not.
+For your own agents: **let the agent do the part it's better at than humans.** Pattern-matching across many inputs is one of those parts. Org-level decision-making is not.
 
 ---
 
