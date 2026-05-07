@@ -255,4 +255,4 @@ MIT. Use it, fork it, rebuild it for your own context. Attribution appreciated.
 
 ## Built by
 
-Sophie Lemieux — [executive-function.substack.com](https://executive-function.substack.com)
+Sophie Lemieux — [sophielemieux.substack.com](https://sophielemieux.substack.com) — *Unsupervised*

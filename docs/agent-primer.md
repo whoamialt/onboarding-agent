@@ -220,9 +220,17 @@ If all four are yes, ship it.
 
 [github.com/whoamialt/onboarding-agent](https://github.com/whoamialt/onboarding-agent) — the agent we built in the workshop. Clone it, run it, fork it, rebuild it for your own workflow.
 
-### My writing
+### My writing — *Unsupervised*
 
-[executive-function.substack.com](https://executive-function.substack.com) — practitioner notes on building this stuff. New posts roughly monthly.
+[sophielemieux.substack.com](https://sophielemieux.substack.com) — practitioner notes on building this stuff. New posts roughly monthly.
+
+### My favorite podcast on this
+
+[How I AI](https://www.youtube.com/@howiaipodcast) — practitioners walking through how they actually use AI day-to-day. Start with [this episode](https://www.youtube.com/watch?v=LJ1YZ3Uek3g).
+
+### The agents course I took and recommend
+
+[HuggingFace Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction) — free, self-paced. Goes deeper on the *how* of agents (loops, planning, tool use, multi-agent) than I have time for in a 60-minute workshop. If you want to get serious, this is where I'd start.
 
 ---
 

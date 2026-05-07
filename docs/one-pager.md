@@ -45,17 +45,24 @@ Every skill needs at least one human checkpoint before any send.
 
 ## Where this leaves off
 
-Most workshops stop at "you can build a skill." The part founders skip — and where production deployments break — is the **orchestration layer**. Multiple agents handing off context, state across steps, retries that don't loop. Worth knowing it exists. Real shipping fixes it; reading doesn't.
+Most workshops stop at "you can build a skill." The part that gets skipped — and where production deployments break — is the **orchestration layer**: multiple agents handing off context, state across steps, retries that don't loop. Worth knowing it exists. Real shipping fixes it; reading doesn't.
 
 ## Resources
 
-- **The agent we built:** [github.com/whoamialt/onboarding-agent](https://github.com/whoamialt/onboarding-agent)
-- **Workshop curriculum, written up:** [docs/agent-primer.md](https://github.com/whoamialt/onboarding-agent/blob/main/docs/agent-primer.md)
-- **Why every choice in this repo:** [docs/why-this-shape.md](https://github.com/whoamialt/onboarding-agent/blob/main/docs/why-this-shape.md)
-- **Anthropic skills library:** [github.com/anthropics/skills](https://github.com/anthropics/skills)
-- **Gooseworks skills directory:** [skills.gooseworks.ai](https://skills.gooseworks.ai/)
-- **Karpathy-style skills:** [github.com/forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)
-- **Caveman (multi-platform skill mgmt):** [github.com/juliusbrussee/caveman](https://github.com/juliusbrussee/caveman)
+**Watch / listen:**
+- 🎧 [How I AI podcast](https://www.youtube.com/@howiaipodcast) — practitioners showing how they work with AI; start with [this episode](https://www.youtube.com/watch?v=LJ1YZ3Uek3g)
+
+**Build:**
+- [The agent we built](https://github.com/whoamialt/onboarding-agent)
+- [Anthropic skills library](https://github.com/anthropics/skills)
+- [Gooseworks skills directory](https://skills.gooseworks.ai/)
+- [Karpathy-style skills](https://github.com/forrestchang/andrej-karpathy-skills)
+- [Caveman (multi-platform skill mgmt)](https://github.com/juliusbrussee/caveman)
+
+**Go deeper:**
+- 🎓 [HuggingFace Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction) — free, self-paced
+- [Workshop curriculum, written up](https://github.com/whoamialt/onboarding-agent/blob/main/docs/agent-primer.md)
+- [Why every choice in the repo](https://github.com/whoamialt/onboarding-agent/blob/main/docs/why-this-shape.md)
 
 ## Where to start (this week)
 
@@ -66,4 +73,4 @@ Most workshops stop at "you can build a skill." The part founders skip — and w
 
 Stuck? Reply to my email with what broke. I learn most from where people get stuck.
 
-— Sophie · [executive-function.substack.com](https://executive-function.substack.com)
+— Sophie · *[Unsupervised](https://sophielemieux.substack.com)*
