@@ -1,6 +1,6 @@
 # Build your first agent — step by step
 
-*Follow this once and you'll have a working agent in about ten minutes. If your screen looks different from what's described — that's fine. The tools change weekly. The shape stays the same.*
+*Follow this once and you'll have a working agent in about ten minutes. If your screen looks different from what's described, that's fine. The tools change weekly. The shape stays the same.*
 
 > The designed (HTML/PDF) version of this lives at `docs/one-pager.html`. Open it in a browser, then ⌘P → Save as PDF if you want to attach it.
 
@@ -8,9 +8,9 @@
 
 ## What you're building
 
-An agent is a loop with judgment, tools, and boundaries. You give it a goal and the constraints. It reads the situation, picks the right approach, asks when stuck.
+An agent is a loop with judgment, tools, and boundaries. You give it a goal and the constraints. It reads the situation, picks an approach, asks when stuck.
 
-Different from chat (forgets each time). Different from a workflow (can't adapt). If your task is "do these exact steps every time," you want a workflow. If it has to adjust based on the case — different role, different person, different situation — you want an agent.
+That's different from chat, which forgets you between conversations. And different from a workflow, which runs the same steps no matter what. If your task is "do these exact steps every time," build a workflow. If the work has to read the case before it acts — onboarding a senior IC vs an intern, sourcing for a fractional exec vs an associate — that's where an agent earns its keep.
 
 ---
 
@@ -19,7 +19,7 @@ Different from chat (forgets each time). Different from a workflow (can't adapt)
 Pick one. They do roughly the same thing.
 
 - **[Claude Code](https://www.claude.com/product/claude-code)** (Anthropic) — what I use most. Download from claude.com or run `npm install -g @anthropic-ai/claude-code` in your terminal.
-- **[Codex](https://chatgpt.com/codex)** (OpenAI) — same idea on the OpenAI side.
+- **[Codex](https://chatgpt.com/codex)** (OpenAI) — the OpenAI version.
 - **[Antigravity](https://antigravity.google/)** (Google) — Google's version. $10/month. Best for tasks involving video or visual content.
 
 Open it from your dock or your browser, depending on what you installed. You'll see a window with a prompt box at the bottom. That's where you type.
@@ -30,17 +30,17 @@ Open it from your dock or your browser, depending on what you installed. You'll 
 
 At the top (or in settings, depending on the tool):
 
-1. **Permissions** — start with **Ask Permissions**. The agent checks with you before each action.
-2. **Mode** — for "build me an agent" or anything ambiguous, use **Plan Mode**. The agent writes a plan, you approve, then it builds. For simpler tasks, Ask is enough.
-3. **Model + effort** — default to **Opus + high**. Stay there until you have a reason to step down.
+1. **Permissions.** Start with Ask Permissions. The agent checks with you before each action.
+2. **Mode.** For "build me an agent" or anything ambiguous, use Plan Mode. The agent writes a plan, you approve, then it builds. For simpler tasks, Ask is enough.
+3. **Model + effort.** Default to Opus + high. Stay there until you have a reason to step down.
 
-*Sonnet is fine for very mechanical tasks. Max effort is for when stakes are high. Opus + high is the right starting point for almost everyone.*
+Sonnet is fine for mechanical tasks. Max effort is for when stakes are high. Opus + high is where I'd start.
 
 ---
 
 ## STEP 03 — Type your goal
 
-Open with this exact phrasing — it works:
+Open with this phrasing. Works for me every time.
 
 ```
 > I would like to build an agent. My goal is to build an onboarding agent
@@ -48,13 +48,13 @@ Open with this exact phrasing — it works:
   manages every part from the initial contract through the 30-day check-in.
 ```
 
-Specific is better. The more your goal sentence sounds like a sentence you'd say to a new hire, the more useful the agent will be.
+Specific is better. The more your goal sentence sounds like one you'd say to a new hire, the more useful the agent will be.
 
 ---
 
 ## STEP 04 — Add your definition of done
 
-Same prompt, right after your goal. Say what "good enough" looks like. This is the single biggest thing that has saved me rework.
+Same prompt, right after your goal. Say what "good enough" looks like. The thing that has saved me the most rework.
 
 ```
 > My definition of done is an MVP that runs the full onboarding lifecycle
@@ -65,17 +65,17 @@ Same prompt, right after your goal. Say what "good enough" looks like. This is t
 
 ## STEP 05 — Submit. Then answer the agent's questions.
 
-Hit enter. The agent will think for a minute (longer on max effort). Then it usually asks back — *"who's the audience? how real should the actions be? any preference on industry?"*
+Hit enter. The agent will think for a minute (longer on max effort). Then it usually asks back: *"who's the audience? how real should the actions be? any preference on industry?"*
 
-Answer them. This is where the agent gets specific to your context. Don't skip this — the questions it asks are doing real work.
+Answer them. This is where the agent gets specific to your context. Don't skip this. The questions it asks are doing real work.
 
 ---
 
 ## STEP 06 — Review the plan
 
-The agent shows you a plan before it builds anything. Read it. Two checks:
+The agent shows you a plan before building anything. Read it. Two checks:
 
-- Does this match what I asked for?
+- Does it match what you asked for?
 - Is anything missing or overscoped?
 
 If yes, accept. If no, redirect:
@@ -90,17 +90,17 @@ Then accept once it's right.
 
 ## STEP 07 — Allow as it works
 
-The agent now builds. It'll ask permission for each meaningful action — *"can I write this file? can I create this folder?"* Click allow.
+The agent now builds. It'll ask permission for each meaningful action: *"can I write this file? can I create this folder?"* Click allow.
 
-If it's a task you trust, click **"always allow this in this project"**. Saves a lot of clicks. Don't do this on your first agent — watch a few permission requests so you understand what it's doing.
+If it's a task you trust, click "always allow this in this project" to save clicks. Don't do this on your first agent. Watch a few permission requests so you understand what it's doing.
 
 ---
 
 ## STEP 08 — Use it. Then iterate.
 
-When the build finishes, your agent lives in a folder on your machine. To use it, run a skill by typing `/skill-name` in the same window.
+When the build finishes, your agent lives in a folder on your machine. To use it, type `/skill-name` in the same window.
 
-To improve it: rerun the agent on three different inputs, watch where it gets confused, tighten the skill files. Three runs are enough to see what's working.
+To improve it: rerun the agent on three different inputs, watch where it gets confused, tighten the skill files. Three runs is enough to see what's working.
 
 ---
 
@@ -116,15 +116,17 @@ The agent will do it. You'll get a URL you can send to anyone.
 
 ---
 
-## Once you've built one — the next things worth knowing
+## Once you've built one
 
-**Dispatch — Claude Code on your phone.** If you're on Claude Code, install the mobile app. They call it Dispatch. When the agent stops for a permission check, it surfaces on your phone. Approve, redirect, or pause from anywhere. The thing that has changed how I work the most.
+A few things worth knowing once you're past the first build.
 
-**The flow I run after the first build.** Plan mode while I'm designing something new → Ask Permissions for day-to-day → Auto only for procedures I've run dozens of times.
+If you're on Claude Code, install the mobile app. They call it Dispatch. When the agent pauses for a permission check, it surfaces on your phone, so you can approve from anywhere. It's the tool change that has affected my workflow the most.
 
-**If your tokens are running out.** Install **[Caveman](https://github.com/juliusbrussee/caveman)**. A skill (and a discipline) for compressing prompts. The biggest single thing for keeping cost sane on a Pro plan.
+After the first build, my flow is plan mode for designing something new, ask permissions for day-to-day, auto only for procedures I've run dozens of times.
 
-**The agent we built today.** [github.com/whoamialt/onboarding-agent](https://github.com/whoamialt/onboarding-agent) — clone it, open in your tool, run `/learn-company lattice-loom marcus-chen`. Five skills, two human checkpoints, no real client info. A teaching artifact you can fork.
+If your tokens are running out, install [Caveman](https://github.com/juliusbrussee/caveman). It's a skill (and a discipline) for compressing prompts. The biggest token saver I've used.
+
+The agent we built together is at [github.com/whoamialt/onboarding-agent](https://github.com/whoamialt/onboarding-agent). Clone it, open in your tool, type `/learn-company lattice-loom marcus-chen`. Five skills, two human checkpoints, no real client info. A teaching artifact you can fork.
 
 ---
 

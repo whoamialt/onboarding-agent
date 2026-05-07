@@ -176,13 +176,13 @@
   <header class="header">
     <div class="eyebrow"><span class="dot"></span> One-pager · Build your first agent</div>
     <h1>Build your<br/>first agent.<br/>Step by step.</h1>
-    <p class="deck">Follow this once and you'll have a working agent in about ten minutes. If your screen looks different from what's described — that's fine. The tools change weekly. The shape stays the same.</p>
+    <p class="deck">Follow this once and you'll have a working agent in about ten minutes. If your screen looks different from what's described, that's fine. The tools change weekly. The shape stays the same.</p>
   </header>
 
   <div class="pre-step">
     <h2>What you're building</h2>
-    <p>An agent is a loop with judgment, tools, and boundaries. You give it a goal and the constraints. It reads the situation, picks the right approach, asks when stuck.</p>
-    <p>Different from chat (forgets each time). Different from a workflow (can't adapt). If your task is "do these exact steps every time," you want a workflow. If it has to adjust based on the case — different role, different person, different situation — you want an agent.</p>
+    <p>An agent is a loop with judgment, tools, and boundaries. You give it a goal and the constraints. It reads the situation, picks an approach, asks when stuck.</p>
+    <p>That's different from chat, which forgets you between conversations. And different from a workflow, which runs the same steps no matter what. If your task is "do these exact steps every time," build a workflow. If the work has to read the case before it acts — onboarding a senior IC vs an intern, sourcing for a fractional exec vs an associate — that's where an agent earns its keep.</p>
   </div>
 
   <section class="step">
@@ -218,13 +218,13 @@
         <p>Default to <strong>Opus + high</strong>. Stay there until you have a reason to step down.</p>
       </div>
     </div>
-    <p class="note">Sonnet is fine for very mechanical tasks. Max effort is for when stakes are high. Opus + high is the right starting point for almost everyone.</p>
+    <p class="note">Sonnet is fine for mechanical tasks. Max effort is for when stakes are high. Opus + high is where I'd start.</p>
   </section>
 
   <section class="step">
     <div class="num">STEP 03</div>
     <h3>Type your goal</h3>
-    <p>Open with this exact phrasing — it works:</p>
+    <p>Open with this phrasing. Works for me every time.</p>
     <div class="prompt">
       <span class="caret">&gt;</span> I would like to build an agent. My goal is to build an onboarding agent that learns from company information what onboarding requires, and manages every part from the initial contract through the 30-day check-in.
     </div>
@@ -234,7 +234,7 @@
   <section class="step">
     <div class="num">STEP 04</div>
     <h3>Add your definition of done</h3>
-    <p>Same prompt, right after your goal. Say what "good enough" looks like. This is the single biggest thing that has saved me rework.</p>
+    <p>Same prompt, right after your goal. Say what "good enough" looks like. The thing that has saved me the most rework.</p>
     <div class="prompt">
       <span class="caret">&gt;</span> My definition of done is an MVP that runs the full onboarding lifecycle end-to-end, with the live steps and human checkpoints visible.
     </div>
@@ -243,16 +243,16 @@
   <section class="step">
     <div class="num">STEP 05</div>
     <h3>Submit. Then answer the agent's questions.</h3>
-    <p>Hit enter. The agent will think for a minute (longer on max effort). Then it usually asks back — <em>"who's the audience? how real should the actions be? any preference on industry?"</em></p>
-    <p>Answer them. This is where the agent gets specific to your context. Don't skip this — the questions it asks are doing real work.</p>
+    <p>Hit enter. The agent will think for a minute (longer on max effort). Then it usually asks back: <em>"who's the audience? how real should the actions be? any preference on industry?"</em></p>
+    <p>Answer them. This is where the agent gets specific to your context. Don't skip this. The questions it asks are doing real work.</p>
   </section>
 
   <section class="step">
     <div class="num">STEP 06</div>
     <h3>Review the plan</h3>
-    <p>The agent shows you a plan before it builds anything. Read it. Two checks:</p>
+    <p>The agent shows you a plan before building anything. Read it. Two checks:</p>
     <ul>
-      <li>Does this match what I asked for?</li>
+      <li>Does it match what you asked for?</li>
       <li>Is anything missing or overscoped?</li>
     </ul>
     <p>If yes, accept. If no, redirect:</p>
@@ -265,15 +265,15 @@
   <section class="step">
     <div class="num">STEP 07</div>
     <h3>Allow as it works</h3>
-    <p>The agent now builds. It'll ask permission for each meaningful action — <em>"can I write this file? can I create this folder?"</em> Click allow.</p>
-    <p>If it's a task you trust, click <strong>"always allow this in this project"</strong>. Saves a lot of clicks. Don't do this on your first agent — watch a few permission requests so you understand what it's doing.</p>
+    <p>The agent now builds. It'll ask permission for each meaningful action: <em>"can I write this file? can I create this folder?"</em> Click allow.</p>
+    <p>If it's a task you trust, click "always allow this in this project" to save clicks. Don't do this on your first agent. Watch a few permission requests so you understand what it's doing.</p>
   </section>
 
   <section class="step">
     <div class="num">STEP 08</div>
     <h3>Use it. Then iterate.</h3>
-    <p>When the build finishes, your agent lives in a folder on your machine. To use it, run a skill by typing <code style="font-family:var(--font-mono);background:var(--carbon);color:var(--citron);padding:2px 8px;border-radius:4px;font-size:13px;">/skill-name</code> in the same window.</p>
-    <p>To improve it: rerun the agent on three different inputs, watch where it gets confused, tighten the skill files. Three runs are enough to see what's working.</p>
+    <p>When the build finishes, your agent lives in a folder on your machine. To use it, type <code style="font-family:var(--font-mono);background:var(--carbon);color:var(--citron);padding:2px 8px;border-radius:4px;font-size:13px;">/skill-name</code> in the same window.</p>
+    <p>To improve it: rerun the agent on three different inputs, watch where it gets confused, tighten the skill files. Three runs is enough to see what's working.</p>
   </section>
 
   <section class="step">
@@ -288,19 +288,15 @@
 
   <section class="post-steps">
     <div class="label">Once you've built one</div>
-    <h2>The next things worth knowing.</h2>
+    <h2>A few things worth knowing.</h2>
 
-    <h3>Dispatch — Claude Code on your phone</h3>
-    <p>If you're on Claude Code, install the mobile app. They call it Dispatch. When the agent stops for a permission check, it surfaces on your phone. You can approve, redirect, or pause from anywhere. The thing that has changed how I work the most.</p>
+    <p>If you're on Claude Code, install the mobile app. They call it Dispatch. When the agent pauses for a permission check, it surfaces on your phone, so you can approve from anywhere. It's the tool change that has affected my workflow the most.</p>
 
-    <h3>The flow I run after the first build</h3>
-    <p>Plan mode while I'm designing something new → Ask Permissions for day-to-day → Auto only for procedures I've run dozens of times.</p>
+    <p>After the first build, my flow is plan mode for designing something new, ask permissions for day-to-day, auto only for procedures I've run dozens of times.</p>
 
-    <h3>If your tokens are running out</h3>
-    <p>Install <a href="https://github.com/juliusbrussee/caveman">Caveman</a>. It's a skill (and a discipline) for compressing prompts. The biggest single thing for keeping cost sane on a Pro plan.</p>
+    <p>If your tokens are running out, install <a href="https://github.com/juliusbrussee/caveman">Caveman</a>. It's a skill (and a discipline) for compressing prompts. The biggest token saver I've used.</p>
 
-    <h3>The agent we built today</h3>
-    <p><a href="https://github.com/whoamialt/onboarding-agent">github.com/whoamialt/onboarding-agent</a> — clone it, open in your tool, run <code style="font-family:var(--font-mono);background:var(--carbon);color:var(--citron);padding:2px 8px;border-radius:4px;font-size:13px;">/learn-company lattice-loom marcus-chen</code>. Five skills, two human checkpoints, no real client info. A teaching artifact you can fork.</p>
+    <p>The agent we built together is at <a href="https://github.com/whoamialt/onboarding-agent">github.com/whoamialt/onboarding-agent</a>. Clone it, open in your tool, type <code style="font-family:var(--font-mono);background:var(--carbon);color:var(--citron);padding:2px 8px;border-radius:4px;font-size:13px;">/learn-company lattice-loom marcus-chen</code>. Five skills, two human checkpoints, no real client info. A teaching artifact you can fork.</p>
 
     <h3>To go deeper</h3>
     <ul>
