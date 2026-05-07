@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# IDE / editor scratch
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local Claude state (private notes, scratch chats)
+CLAUDE.local.md
+.claude/projects/
+.claude/sessions/
+
+# Generated demo outputs (uncomment if you want to keep the repo clean of demo runs)
+# companies/*/hires/*/plan.md
+# companies/*/hires/*/contract.md
+# companies/*/hires/*/preboarding.md
+# companies/*/hires/*/first-day.md
+# companies/*/hires/*/thirty-day.md
