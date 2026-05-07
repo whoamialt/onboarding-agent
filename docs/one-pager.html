@@ -369,7 +369,47 @@
   </section>
 
   <section>
-    <div class="label">Two questions you asked</div>
+    <div class="label">How I actually run it</div>
+    <h2>Model, effort, modes — and the mobile app that changed how I work.</h2>
+
+    <h3>Model + effort level</h3>
+    <p>I default to <strong>Opus + high effort</strong> for most agent work. Opus is reliably better at reasoning, and "high" gives the model enough room to think through complex tasks. For very simple, mechanical procedures — a time tracker, a file mover, an admin script where the steps are obvious — Sonnet is fine and faster and cheaper.</p>
+    <p>I scale effort with how much reasoning the work needs: <strong>high</strong> for synthesis and design, <strong>medium</strong> for execution, <strong>max</strong> only when stakes are high or I'm in front of an audience. For someone starting out: Opus + high is a good default. Stay there until you have a reason to step down.</p>
+
+    <h3>The three run modes</h3>
+    <div class="three-up">
+      <div class="card">
+        <div class="tag">Mode 1</div>
+        <h4>Plan mode</h4>
+        <p>Agent writes a plan, you review, you approve. Then it executes.</p>
+        <p class="feel">Use when the task is new or ambiguous.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Mode 2</div>
+        <h4>Ask permissions</h4>
+        <p>Agent runs but asks before each meaningful action.</p>
+        <p class="feel">Use when you trust the shape but want to stay in the loop.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Mode 3</div>
+        <h4>Auto</h4>
+        <p>Agent runs autonomously. Fast, no interruptions.</p>
+        <p class="feel">Use sparingly — only for procedures you've run many times.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px;"><strong>The flow I usually run:</strong> plan mode while I'm designing the agent (or anything new) → ask permissions for day-to-day execution → auto mode only for the most well-tested procedures. Plan mode isn't about safety — it's about <em>calibration</em>. It forces the agent to articulate what it's about to do before it does it, so you catch wrong assumptions before they become wrong outputs.</p>
+
+    <h3>Dispatch — Claude Code on your phone</h3>
+    <p>If you're on Claude Code, install the mobile app — they call it <strong>Dispatch</strong>. It's the thing that has changed how I work the most. Whatever's running on my laptop gets surfaced on my phone, so when an agent stops for a permission check, I see it and can approve, redirect, or pause from anywhere.</p>
+    <p>It keeps the oversight without keeping me chained to the screen. Honestly a little addictive — I've caught myself approving agent runs from the grocery store. Worth it for any work that uses long-running agents with human checkpoints, which is most of it.</p>
+
+    <div class="callout">
+      <strong>The starter recipe:</strong> Opus, high effort, plan mode for the build, ask permissions for the day-to-day, Dispatch on your phone so you're not stuck at the laptop. That's the whole stack for the first month.
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Two more questions you asked</div>
     <h2>The follow-ups worth answering on paper.</h2>
 
     <div class="qa">
@@ -379,9 +419,10 @@
     </div>
 
     <div class="qa">
-      <p class="q">My pro plan runs out of tokens running one daily agent — am I doing something wrong?</p>
-      <p>Probably not, but it depends. How many MCPs is the agent connected to? How big is the context window? How heavy is the task? An agent that pings five tools, reads ten files, and runs a multi-step decision will eat through a pro plan. Caveman (linked below) helps compress prompts and is worth installing if your context windows are running long.</p>
-      <p>Beyond that, Anthropic's Pro and Max plans aren't unreasonable — especially in a building phase. I'm running Max while I'm actively building, and I expect that to drop once the heavy build period is over. Investing more in the build phase is fine; you'll do less of it in steady state.</p>
+      <p class="q">My Pro plan runs out of tokens running one daily agent — am I doing something wrong?</p>
+      <p>Probably not, but it depends. How many MCPs is the agent connected to? How big is the context window? How heavy is the task? An agent that pings five tools, reads ten files, and runs a multi-step decision will eat through a Pro plan.</p>
+      <p>The first thing I'd try is <strong><a href="https://github.com/juliusbrussee/caveman">Caveman</a></strong> — a skill (and a discipline) for compressing prompts and tightening what gets loaded into context. Install it if your context windows are running long. It's the single highest-leverage thing for keeping token usage sane.</p>
+      <p>Beyond that, Anthropic's plans are roughly Pro at $20/month, the 5x at ~$100, Max at $200, then enterprise. The Max plan isn't unreasonable in a building phase — I'm running Max while I'm actively building and expect that to drop once the heavy build is done. Investing more during the build phase is fine; you'll do less of it in steady state.</p>
     </div>
   </section>
 

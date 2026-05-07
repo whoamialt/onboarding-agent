@@ -52,7 +52,37 @@ If you only read one doc inside the repo, read [`docs/why-this-shape.md`](https:
 
 ---
 
-## Two questions you asked
+## How I actually run it
+
+### Model + effort level
+
+I default to **Opus + high effort** for most agent work. Opus is reliably better at reasoning, and "high" gives the model enough room to think through complex tasks. For very simple, mechanical procedures — a time tracker, a file mover, an admin script where the steps are obvious — Sonnet is fine and faster and cheaper.
+
+I scale effort with how much reasoning the work needs: **high** for synthesis and design, **medium** for execution, **max** only when stakes are high or I'm in front of an audience.
+
+**For someone starting out:** Opus + high is a good default. Stay there until you have a reason to step down.
+
+### The three run modes
+
+- **Plan mode** — agent writes a plan, you review, you approve, then it executes. Use when the task is new or ambiguous.
+- **Ask permissions** — agent runs but asks before each meaningful action. Use when you trust the shape of the work and just want to stay in the loop.
+- **Auto** — agent runs autonomously. Use sparingly, only for procedures you've run many times.
+
+**The flow I usually run:** plan mode while I'm designing the agent (or anything new) → ask permissions for day-to-day execution → auto mode only for the most well-tested procedures.
+
+Plan mode isn't about safety — it's about *calibration.* It forces the agent to articulate what it's about to do before it does it, so you catch wrong assumptions before they become wrong outputs.
+
+### Dispatch — Claude Code on your phone
+
+If you're on Claude Code, install the mobile app — they call it **Dispatch**. It's the thing that has changed how I work the most. Whatever's running on my laptop gets surfaced on my phone, so when an agent stops for a permission check, I see it and can approve, redirect, or pause from anywhere.
+
+It keeps the oversight without keeping me chained to the screen. Honestly a little addictive — I've caught myself approving agent runs from the grocery store. Worth it for any work that uses long-running agents with human checkpoints, which is most of it.
+
+> **The starter recipe:** Opus, high effort, plan mode for the build, ask permissions for the day-to-day, Dispatch on your phone so you're not stuck at the laptop. That's the whole stack for the first month.
+
+---
+
+## Two more questions you asked
 
 **Are these `.md` files Claude-generated, or do I have to add params?**
 
@@ -60,11 +90,13 @@ Both work. You can copy a skill from a public library and use it as-is, but I al
 
 The trap I see: people download every skill they can find. Don't do that. It's like starting a new job and being given every internal doc from every team — you remember none of it and use less of it. Build the skills you'll actually use. Three good ones beat fifty downloaded ones.
 
-**My pro plan runs out of tokens running one daily agent — am I doing something wrong?**
+**My Pro plan runs out of tokens running one daily agent — am I doing something wrong?**
 
-Probably not, but it depends. How many MCPs is the agent connected to? How big is the context window? How heavy is the task? An agent that pings five tools, reads ten files, and runs a multi-step decision will eat through a pro plan. Caveman (linked below) helps compress prompts and is worth installing if your context windows are running long.
+Probably not, but it depends. How many MCPs is the agent connected to? How big is the context window? How heavy is the task? An agent that pings five tools, reads ten files, and runs a multi-step decision will eat through a Pro plan.
 
-Beyond that, Anthropic's Pro and Max plans aren't unreasonable — especially in a building phase. I'm running Max while I'm actively building, and I expect that to drop once the heavy build period is over. Investing more in the build phase is fine; you'll do less of it in steady state.
+The first thing I'd try is **[Caveman](https://github.com/juliusbrussee/caveman)** — a skill (and a discipline) for compressing prompts and tightening what gets loaded into context. Install it if your context windows are running long. It's the single highest-leverage thing for keeping token usage sane.
+
+Beyond that, Anthropic's plans are roughly Pro at $20/month, the 5x at ~$100, Max at $200, then enterprise. The Max plan isn't unreasonable in a building phase — I'm running Max while I'm actively building and expect that to drop once the heavy build is done. Investing more during the build phase is fine; you'll do less of it in steady state.
 
 ---
 
