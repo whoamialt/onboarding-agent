@@ -1,6 +1,6 @@
-# Build your first agent — step by step
+# Build your first agent. Step by step.
 
-*Follow this once and you'll have a working agent in about ten minutes. If your screen looks different from what's described, that's fine. The tools change weekly. The shape stays the same.*
+*Follow this once and you'll have a working agent in about ten minutes. If your screen looks different from what I describe, that's fine. The tools change weekly. The shape stays the same.*
 
 > The designed (HTML/PDF) version of this lives at `docs/one-pager.html`. Open it in a browser, then ⌘P → Save as PDF if you want to attach it.
 
@@ -8,25 +8,25 @@
 
 ## What you're building
 
-An agent is a loop with judgment, tools, and boundaries. You give it a goal and the constraints. It reads the situation, picks an approach, asks when stuck.
+An agent is a loop with judgment, tools, and boundaries. You give it a goal and the constraints. It reads the situation, picks an approach, asks when it's stuck.
 
-That's different from chat, which forgets you between conversations. And different from a workflow, which runs the same steps no matter what. If your task is "do these exact steps every time," build a workflow. If the work has to read the case before it acts — onboarding a senior IC vs an intern, sourcing for a fractional exec vs an associate — that's where an agent earns its keep.
+That's different from chat, which forgets you between conversations. And different from a workflow, which runs the same steps no matter what. If your task is "do these exact steps every time," build a workflow. If the work has to read the case before it acts, that's where an agent earns its keep. Onboarding a senior IC is different from onboarding an intern. Sourcing for a fractional exec is different from sourcing for an associate. That's agent territory.
 
 ---
 
-## STEP 01 — Install your tool
+## Step 01. Install your tool
 
 Pick one. They do roughly the same thing.
 
-- **[Claude Code](https://www.claude.com/product/claude-code)** (Anthropic) — what I use most. Download from claude.com or run `npm install -g @anthropic-ai/claude-code` in your terminal.
-- **[Codex](https://chatgpt.com/codex)** (OpenAI) — the OpenAI version.
-- **[Antigravity](https://antigravity.google/)** (Google) — Google's version. $10/month. Best for tasks involving video or visual content.
+- **[Claude Code](https://www.claude.com/product/claude-code)** (Anthropic). What I use most. Download from claude.com or run `npm install -g @anthropic-ai/claude-code` in your terminal.
+- **[Codex](https://chatgpt.com/codex)** (OpenAI). The OpenAI version.
+- **[Antigravity](https://antigravity.google/)** (Google). $10 a month. Best for tasks involving video or visual content.
 
 Open it from your dock or your browser, depending on what you installed. You'll see a window with a prompt box at the bottom. That's where you type.
 
 ---
 
-## STEP 02 — Set three switches before you type
+## Step 02. Set three switches before you type
 
 At the top (or in settings, depending on the tool):
 
@@ -38,7 +38,7 @@ Sonnet is fine for mechanical tasks. Max effort is for when stakes are high. Opu
 
 ---
 
-## STEP 03 — Type your goal
+## Step 03. Type your goal
 
 Open with this phrasing. Works for me every time.
 
@@ -52,7 +52,7 @@ Specific is better. The more your goal sentence sounds like one you'd say to a n
 
 ---
 
-## STEP 04 — Add your definition of done
+## Step 04. Add your definition of done
 
 Same prompt, right after your goal. Say what "good enough" looks like. The thing that has saved me the most rework.
 
@@ -63,7 +63,7 @@ Same prompt, right after your goal. Say what "good enough" looks like. The thing
 
 ---
 
-## STEP 05 — Submit. Then answer the agent's questions.
+## Step 05. Submit. Then answer the agent's questions.
 
 Hit enter. The agent will think for a minute (longer on max effort). Then it usually asks back: *"who's the audience? how real should the actions be? any preference on industry?"*
 
@@ -71,7 +71,7 @@ Answer them. This is where the agent gets specific to your context. Don't skip t
 
 ---
 
-## STEP 06 — Review the plan
+## Step 06. Review the plan
 
 The agent shows you a plan before building anything. Read it. Two checks:
 
@@ -88,7 +88,7 @@ Then accept once it's right.
 
 ---
 
-## STEP 07 — Allow as it works
+## Step 07. Allow as it works
 
 The agent now builds. It'll ask permission for each meaningful action: *"can I write this file? can I create this folder?"* Click allow.
 
@@ -96,7 +96,7 @@ If it's a task you trust, click "always allow this in this project" to save clic
 
 ---
 
-## STEP 08 — Use it. Then iterate.
+## Step 08. Use it. Then iterate.
 
 When the build finishes, your agent lives in a folder on your machine. To use it, type `/skill-name` in the same window.
 
@@ -104,7 +104,7 @@ To improve it: rerun the agent on three different inputs, watch where it gets co
 
 ---
 
-## STEP 09 (optional) — Save and share
+## Step 09. (optional) Save and share
 
 To back it up or share with someone:
 
@@ -132,15 +132,15 @@ The agent we built together is at [github.com/whoamialt/onboarding-agent](https:
 
 ## To go deeper
 
-- **[Andrej Karpathy](https://x.com/karpathy)** — co-founder of OpenAI, ex-Tesla AI, taught Stanford CS231n. The most-recommended AI educator on the internet. Watch his "Intro to LLMs" lecture (1 hr on YouTube). It will change how you think about everything else.
-- **[HuggingFace Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)** — the course I took. Free, self-paced.
-- **[How I AI](https://www.youtube.com/@howiaipodcast)** — my favorite podcast. Start with [this episode](https://www.youtube.com/watch?v=LJ1YZ3Uek3g).
-- **[Anthropic skills library](https://github.com/anthropics/skills)** · **[Gooseworks directory](https://skills.gooseworks.ai/)** — when you're ready to study what other people have built.
+- **[Andrej Karpathy](https://x.com/karpathy)**. Co-founder of OpenAI, ex-Tesla AI, taught Stanford CS231n. The most-recommended AI educator on the internet. Watch his "Intro to LLMs" lecture (1 hr on YouTube). It will change how you think about everything else.
+- **[HuggingFace Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)**. The course I took. Free, self-paced.
+- **[How I AI](https://www.youtube.com/@howiaipodcast)**. My favorite podcast. Start with [this episode](https://www.youtube.com/watch?v=LJ1YZ3Uek3g).
+- **[Anthropic skills library](https://github.com/anthropics/skills)** and **[Gooseworks directory](https://skills.gooseworks.ai/)**. Worth a browse when you want to see what other people have built.
 
 ---
 
-## Stuck?
+## What's going on?
 
-Reply to my email with what you tried and where it broke. I learn most from where people get stuck.
+If something's not working, reply to my email. Tell me what you tried and where it broke. I learn most from where people get stuck.
 
-— Sophie · *[Unsupervised on Substack](https://sophielemieux.substack.com)*
+Sophie. [Unsupervised on Substack](https://sophielemieux.substack.com).
