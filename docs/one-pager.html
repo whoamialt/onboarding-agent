@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Building Agents — Session Recap · Sophie Lemieux</title>
+<title>Build your first agent — Sophie Lemieux</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -18,11 +18,7 @@
     --hairline: #E7E6E1;
     --cobalt: #2B3CFF;
     --cobalt-wash: #E5E8FF;
-    --magenta: #FF2D7E;
     --citron: #C8FF2B;
-    --plum: #6B2DFF;
-    --terminal: #0E0E0C;
-    --terminal-soft: #E7E6E1;
 
     --font-display: "Inter Tight", system-ui, sans-serif;
     --font-body: "Inter", system-ui, sans-serif;
@@ -32,226 +28,122 @@
 
   * { box-sizing: border-box; }
   html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--paper);
-    color: var(--carbon);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    margin: 0; padding: 0;
+    background: var(--paper); color: var(--carbon);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
   }
   ::selection { background: var(--cobalt); color: var(--paper); }
-
   a { color: var(--cobalt); text-decoration: none; border-bottom: 1px solid var(--cobalt); }
   a:hover { background: var(--cobalt-wash); }
 
-  .page { max-width: 880px; margin: 0 auto; padding: 64px 32px 96px; }
+  .page { max-width: 820px; margin: 0 auto; padding: 56px 32px 80px; }
 
-  /* Header */
-  .header { border-bottom: 1px solid var(--hairline); padding-bottom: 32px; margin-bottom: 64px; }
+  .header { border-bottom: 1px solid var(--hairline); padding-bottom: 28px; margin-bottom: 48px; }
   .header .eyebrow {
     font-family: var(--font-mono); font-size: 13px; color: var(--slate);
-    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 16px;
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 14px;
   }
   .header .eyebrow .dot {
     display: inline-block; width: 8px; height: 8px; background: var(--cobalt); margin-right: 8px; vertical-align: 1px;
   }
   .header h1 {
-    font-family: var(--font-display); font-weight: 700; font-size: 64px;
+    font-family: var(--font-display); font-weight: 700; font-size: 56px;
     line-height: 1.0; letter-spacing: -0.03em; margin: 0 0 16px; color: var(--graphite);
   }
   .header .deck {
-    font-family: var(--font-editorial); font-size: 20px; line-height: 1.55;
-    color: var(--graphite); max-width: 640px; margin: 0;
-  }
-  .header .meta {
-    font-family: var(--font-mono); font-size: 13px; color: var(--slate);
-    margin-top: 24px; display: flex; gap: 24px; flex-wrap: wrap;
-  }
-  .header .meta span::before { content: "/ "; color: var(--mist); }
-
-  /* Section */
-  section { margin-bottom: 96px; }
-  section .label {
-    font-family: var(--font-mono); font-size: 12px; color: var(--slate);
-    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;
-    border-top: 1px solid var(--carbon); padding-top: 12px; display: inline-block;
-  }
-  section h2 {
-    font-family: var(--font-display); font-weight: 700; font-size: 36px;
-    line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 24px; color: var(--graphite);
-  }
-  section h3 {
-    font-family: var(--font-display); font-weight: 600; font-size: 22px;
-    line-height: 1.3; letter-spacing: -0.01em; margin: 32px 0 12px; color: var(--graphite);
-  }
-  section p { margin: 0 0 16px; max-width: 720px; }
-  section p.lede { font-family: var(--font-editorial); font-size: 19px; line-height: 1.6; }
-  section strong { font-weight: 600; color: var(--carbon); }
-
-  /* Slash-command chip — signature mark */
-  .chip {
-    display: inline-block;
-    background: var(--carbon); color: var(--citron);
-    font-family: var(--font-mono); font-size: 13px; font-weight: 500;
-    padding: 4px 10px; border-radius: 4px; letter-spacing: 0;
-    border-bottom: none;
-  }
-  a.chip:hover { background: var(--graphite); }
-
-  /* Three-up grid (chat/workflow/agent) */
-  .three-up { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
-  .three-up .card {
-    background: var(--surface); border: 1px solid var(--hairline); border-radius: 12px;
-    padding: 24px;
-  }
-  .three-up .card .tag {
-    font-family: var(--font-mono); font-size: 11px; color: var(--slate);
-    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;
-  }
-  .three-up .card h4 {
-    font-family: var(--font-display); font-weight: 700; font-size: 20px;
-    margin: 0 0 8px; letter-spacing: -0.01em; color: var(--graphite);
-  }
-  .three-up .card.agent { background: var(--cobalt-wash); border-color: var(--cobalt-wash); }
-  .three-up .card.agent h4 { color: var(--cobalt); }
-  .three-up .card p { font-size: 14px; line-height: 1.5; margin: 0 0 8px; color: var(--graphite); }
-  .three-up .card p.feel { font-style: italic; color: var(--slate); font-size: 13px; }
-
-  /* Pull quote */
-  .quote {
-    border-left: 3px solid var(--cobalt); padding: 4px 0 4px 24px; margin: 32px 0;
-    font-family: var(--font-editorial); font-size: 22px; line-height: 1.4;
-    color: var(--graphite); max-width: 680px;
+    font-family: var(--font-editorial); font-size: 19px; line-height: 1.55;
+    color: var(--graphite); max-width: 620px; margin: 0;
   }
 
-  /* Repo callout block */
-  .repo-block {
-    background: var(--terminal); color: var(--terminal-soft);
-    padding: 32px; border-radius: 12px; margin: 24px 0;
-    font-family: var(--font-mono); font-size: 14px;
-  }
-  .repo-block .top {
-    display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;
-    border-bottom: 1px solid #2B2A28; padding-bottom: 12px;
-  }
-  .repo-block .top .path { color: var(--citron); }
-  .repo-block .top .badge {
-    background: var(--citron); color: var(--carbon);
-    padding: 2px 8px; font-size: 11px; letter-spacing: 0.04em; border-radius: 4px;
-    font-weight: 500;
-  }
-  .repo-block ul { list-style: none; padding: 0; margin: 8px 0 0; }
-  .repo-block ul li { padding: 6px 0; color: var(--terminal-soft); }
-  .repo-block ul li .skill { color: var(--citron); margin-right: 12px; }
-  .repo-block a { color: var(--citron); border-bottom: 1px solid var(--citron); }
-  .repo-block a:hover { background: rgba(200, 255, 43, 0.15); }
-
-  /* Q&A blocks */
-  .qa { border-top: 1px solid var(--hairline); padding-top: 24px; margin-top: 32px; }
-  .qa:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
-  .qa .q {
-    font-family: var(--font-display); font-weight: 600; font-size: 20px;
-    line-height: 1.3; letter-spacing: -0.01em; color: var(--graphite); margin: 0 0 8px;
-  }
-  .qa .q::before {
-    content: "Q";
-    display: inline-block; background: var(--carbon); color: var(--paper);
-    font-family: var(--font-mono); font-size: 12px; padding: 2px 6px;
-    border-radius: 4px; margin-right: 12px; vertical-align: 4px;
-  }
-
-  /* Resource list */
-  .resource {
-    border-top: 1px solid var(--hairline); padding: 20px 0; display: grid;
-    grid-template-columns: 220px 1fr; gap: 32px; align-items: start;
-  }
-  .resource:first-child { border-top: 0; padding-top: 0; }
-  .resource .name {
-    font-family: var(--font-display); font-weight: 700; font-size: 18px;
-    letter-spacing: -0.01em; color: var(--graphite);
-  }
-  .resource .name a { color: var(--graphite); border-bottom: 1px solid var(--mist); }
-  .resource .name a:hover { color: var(--cobalt); border-color: var(--cobalt); }
-  .resource .name .kind {
-    display: block; font-family: var(--font-mono); font-size: 11px;
-    color: var(--slate); font-weight: 400; letter-spacing: 0.06em;
-    text-transform: uppercase; margin-top: 4px;
-  }
-  .resource .body { font-size: 15px; line-height: 1.55; color: var(--graphite); }
-  .resource .body p { margin: 0 0 8px; }
-  .resource .body p:last-child { margin-bottom: 0; }
-
-  /* Karpathy block (special) */
-  .karpathy {
-    background: var(--surface); border: 1px solid var(--hairline); border-radius: 12px;
-    padding: 32px; margin: 24px 0;
-  }
-  .karpathy .name-line {
-    font-family: var(--font-display); font-weight: 700; font-size: 28px;
-    letter-spacing: -0.02em; color: var(--graphite); margin: 0 0 4px;
-  }
-  .karpathy .role-line {
-    font-family: var(--font-mono); font-size: 13px; color: var(--slate);
-    margin-bottom: 24px;
-  }
-  .karpathy h4 {
-    font-family: var(--font-display); font-weight: 600; font-size: 16px;
-    letter-spacing: 0; margin: 24px 0 8px; color: var(--cobalt);
-    text-transform: uppercase; letter-spacing: 0.06em; font-size: 12px;
-  }
-  .karpathy h4:first-of-type { margin-top: 0; }
-  .karpathy p { font-size: 15px; line-height: 1.55; margin: 0 0 8px; max-width: 100%; }
-
-  /* Follows grid */
-  .follows { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 16px; }
-  .follows .col h3 {
-    font-family: var(--font-display); font-weight: 700; font-size: 20px;
-    margin: 0 0 16px; letter-spacing: -0.01em;
-  }
-  .follow-item {
-    border-top: 1px solid var(--hairline); padding: 12px 0;
-    display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: start;
-  }
-  .follow-item:first-child { border-top: 0; }
-  .follow-item .handle {
-    font-family: var(--font-mono); font-size: 13px; font-weight: 500;
-  }
-  .follow-item .handle a { color: var(--cobalt); border-bottom: 1px solid var(--cobalt); }
-  .follow-item .what { font-size: 14px; line-height: 1.5; color: var(--graphite); }
-
-  /* Steps list */
-  .steps { counter-reset: step; padding: 0; list-style: none; margin: 24px 0; }
-  .steps li {
-    counter-increment: step; padding: 16px 0 16px 56px; position: relative;
-    border-top: 1px solid var(--hairline); font-size: 16px; line-height: 1.55;
-  }
-  .steps li:first-child { border-top: 0; }
-  .steps li::before {
-    content: "0" counter(step);
-    position: absolute; left: 0; top: 16px;
-    font-family: var(--font-mono); font-size: 13px; font-weight: 500;
-    color: var(--cobalt); letter-spacing: 0.04em;
-  }
-  .steps li strong { font-weight: 600; }
-
-  /* Tiny callout */
-  .callout {
-    background: var(--cobalt-wash); padding: 16px 20px; border-radius: 8px;
-    font-size: 15px; line-height: 1.55; margin: 24px 0; color: var(--graphite);
+  /* Pre-step: what an agent is */
+  .pre-step {
+    background: var(--cobalt-wash); padding: 20px 24px; border-radius: 12px; margin-bottom: 56px;
     border-left: 3px solid var(--cobalt);
   }
-  .callout strong { color: var(--cobalt); }
+  .pre-step h2 {
+    font-family: var(--font-display); font-weight: 700; font-size: 18px;
+    margin: 0 0 8px; letter-spacing: -0.01em; color: var(--cobalt);
+    text-transform: uppercase; letter-spacing: 0.06em; font-size: 12px;
+  }
+  .pre-step p { margin: 0 0 8px; font-size: 15px; line-height: 1.55; }
+  .pre-step p:last-child { margin-bottom: 0; }
+
+  /* Steps */
+  .step { margin-bottom: 48px; padding-top: 32px; border-top: 1px solid var(--hairline); }
+  .step:first-of-type { border-top: 0; padding-top: 0; }
+  .step .num {
+    font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+    color: var(--cobalt); letter-spacing: 0.06em; margin-bottom: 8px;
+  }
+  .step h3 {
+    font-family: var(--font-display); font-weight: 700; font-size: 28px;
+    line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 16px; color: var(--graphite);
+  }
+  .step p { margin: 0 0 12px; max-width: 720px; }
+  .step ul { margin: 8px 0 16px 0; padding-left: 0; list-style: none; }
+  .step ul li { padding: 4px 0 4px 20px; position: relative; max-width: 720px; }
+  .step ul li::before { content: "→"; position: absolute; left: 0; color: var(--cobalt); }
+  .step ul li strong { font-weight: 600; }
+  .step .note {
+    font-family: var(--font-editorial); font-size: 15px; color: var(--slate);
+    font-style: italic; margin-top: 8px;
+  }
+
+  /* Prompt box / terminal style */
+  .prompt {
+    background: var(--carbon); color: var(--terminal-soft, #E7E6E1);
+    padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px;
+    font-family: var(--font-mono); font-size: 13px; line-height: 1.55;
+    border-left: 3px solid var(--citron);
+  }
+  .prompt .caret { color: var(--citron); margin-right: 8px; }
+  .prompt em { color: var(--mist); font-style: italic; }
+
+  /* Three-switch grid */
+  .switches { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .switches .sw {
+    background: var(--surface); border: 1px solid var(--hairline);
+    border-radius: 8px; padding: 14px 16px;
+  }
+  .switches .sw .lbl {
+    font-family: var(--font-mono); font-size: 11px; color: var(--slate);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;
+  }
+  .switches .sw h4 {
+    font-family: var(--font-display); font-weight: 700; font-size: 15px;
+    margin: 0 0 4px; letter-spacing: -0.01em;
+  }
+  .switches .sw p { font-size: 13px; line-height: 1.4; margin: 0; color: var(--graphite); }
+
+  /* Section after steps */
+  .post-steps { margin-top: 64px; }
+  .post-steps h2 {
+    font-family: var(--font-display); font-weight: 700; font-size: 28px;
+    line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 16px;
+  }
+  .post-steps h3 {
+    font-family: var(--font-display); font-weight: 600; font-size: 18px;
+    margin: 24px 0 8px; letter-spacing: -0.01em;
+  }
+  .post-steps p { margin: 0 0 12px; max-width: 720px; }
+  .post-steps ul { padding-left: 0; list-style: none; margin: 0 0 16px; }
+  .post-steps ul li { padding: 6px 0 6px 20px; position: relative; }
+  .post-steps ul li::before { content: "·"; position: absolute; left: 6px; color: var(--cobalt); font-weight: 700; }
+  .post-steps .label {
+    font-family: var(--font-mono); font-size: 12px; color: var(--slate);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    border-top: 1px solid var(--carbon); padding-top: 12px; display: inline-block;
+    margin-bottom: 16px;
+  }
 
   /* Footer */
   footer {
-    border-top: 1px solid var(--hairline); padding-top: 32px; margin-top: 96px;
+    border-top: 1px solid var(--hairline); padding-top: 32px; margin-top: 64px;
     display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end;
   }
   footer .signoff {
-    font-family: var(--font-display); font-size: 24px; font-weight: 700;
+    font-family: var(--font-display); font-size: 22px; font-weight: 700;
     letter-spacing: -0.02em; color: var(--graphite);
   }
   footer .meta {
@@ -260,23 +152,19 @@
   }
   footer .meta a { color: var(--cobalt); }
 
-  /* Print: keep design but tighter */
   @media print {
     body { background: var(--paper) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .page { max-width: 100%; padding: 24px; }
-    section { margin-bottom: 48px; page-break-inside: avoid; }
+    .step { page-break-inside: avoid; margin-bottom: 32px; padding-top: 20px; }
+    .pre-step, .prompt { page-break-inside: avoid; }
     a { border-bottom: none; color: var(--carbon); }
-    .repo-block, .karpathy, .qa { page-break-inside: avoid; }
     @page { size: letter; margin: 0.5in; }
   }
 
   @media (max-width: 720px) {
     .page { padding: 32px 20px 64px; }
-    .header h1 { font-size: 44px; }
-    .three-up { grid-template-columns: 1fr; }
-    .resource { grid-template-columns: 1fr; gap: 12px; }
-    .follows { grid-template-columns: 1fr; }
-    .follow-item { grid-template-columns: 1fr; gap: 4px; }
+    .header h1 { font-size: 38px; }
+    .switches { grid-template-columns: 1fr; }
     footer { grid-template-columns: 1fr; }
     footer .meta { text-align: left; }
   }
@@ -286,272 +174,144 @@
 <div class="page">
 
   <header class="header">
-    <div class="eyebrow"><span class="dot"></span> Session recap · Building agents, live</div>
-    <h1>Building<br/>agents,<br/>live.</h1>
-    <p class="deck">A recap of the session: what I covered, what we built together, and the resources to keep going. Built so you can read it once, share it forward, and have one place to come back to when you sit down to build.</p>
-    <div class="meta">
-      <span>Sophie Lemieux</span>
-      <span>Session 02 · Building agents</span>
-      <span>Follow-up to: building agentic teams</span>
-    </div>
+    <div class="eyebrow"><span class="dot"></span> One-pager · Build your first agent</div>
+    <h1>Build your<br/>first agent.<br/>Step by step.</h1>
+    <p class="deck">Follow this once and you'll have a working agent in about ten minutes. If your screen looks different from what's described — that's fine. The tools change weekly. The shape stays the same.</p>
   </header>
 
-  <section>
-    <div class="label">What we did today</div>
-    <h2>From theory to a live build.</h2>
-    <p class="lede">Two weeks ago we did the theory session — what an agent is, when to build one, how teams should work alongside them. The feedback from the survey was clear: thanks for the theory, now show us how to build one. So today was the live build.</p>
-    <p>We picked onboarding because almost everyone in the room has a version of it on their plate. I built the agent from scratch in Claude Code while you watched — fictional company, fictional new hire, five skills, two human checkpoints, no real client info anywhere on screen.</p>
-    <p>The thing I most want you to leave with is the mental model, not the agent. The agent is a teaching artifact. The mental model is what you'll use on Tuesday morning.</p>
+  <div class="pre-step">
+    <h2>What you're building</h2>
+    <p>An agent is a loop with judgment, tools, and boundaries. You give it a goal and the constraints. It reads the situation, picks the right approach, asks when stuck.</p>
+    <p>Different from chat (forgets each time). Different from a workflow (can't adapt). If your task is "do these exact steps every time," you want a workflow. If it has to adjust based on the case — different role, different person, different situation — you want an agent.</p>
+  </div>
+
+  <section class="step">
+    <div class="num">STEP 01</div>
+    <h3>Install your tool</h3>
+    <p>Pick one. They do roughly the same thing.</p>
+    <ul>
+      <li><strong><a href="https://www.claude.com/product/claude-code">Claude Code</a></strong> (Anthropic) — what I use most. Download from claude.com or run <code style="font-family:var(--font-mono);background:#E7E6E1;padding:1px 6px;border-radius:4px;font-size:13px;">npm install -g @anthropic-ai/claude-code</code> in your terminal.</li>
+      <li><strong><a href="https://chatgpt.com/codex">Codex</a></strong> (OpenAI) — same idea on the OpenAI side.</li>
+      <li><strong><a href="https://antigravity.google/">Antigravity</a></strong> (Google) — Google's version. $10/month. Best for tasks involving video or visual content.</li>
+    </ul>
+    <p>Open it from your dock or your browser, depending on what you installed. You'll see a window with a prompt box at the bottom. That's where you type.</p>
   </section>
 
-  <section>
-    <div class="label">The mental model</div>
-    <h2>Chat, workflow, agent — when to use which.</h2>
-    <p>The most-asked question in the survey was the difference between these three. Here's how I think about it.</p>
-
-    <div class="three-up">
-      <div class="card">
-        <div class="tag">Level 1</div>
-        <h4>Chat</h4>
-        <p>You ask, it answers. Context has to be re-loaded every conversation.</p>
-        <p class="feel">You feel like a user.</p>
-        <p><strong>Best for:</strong> one-off drafts, brainstorming, quick research.</p>
+  <section class="step">
+    <div class="num">STEP 02</div>
+    <h3>Set three switches before you type</h3>
+    <p>At the top (or in settings, depending on the tool):</p>
+    <div class="switches">
+      <div class="sw">
+        <div class="lbl">Switch 1</div>
+        <h4>Permissions</h4>
+        <p>Start with <strong>Ask Permissions</strong>. The agent checks with you before each action.</p>
       </div>
-      <div class="card">
-        <div class="tag">Level 2</div>
-        <h4>Workflow</h4>
-        <p>You write every step in order. It runs the same procedure the same way every time.</p>
-        <p class="feel">You feel like a micromanager.</p>
-        <p><strong>Best for:</strong> predictable, repeatable procedures (laptop order → welcome email → calendar setup).</p>
+      <div class="sw">
+        <div class="lbl">Switch 2</div>
+        <h4>Mode</h4>
+        <p>For "build me an agent," use <strong>Plan Mode</strong>. Plan first, then build. For simpler tasks, Ask is enough.</p>
       </div>
-      <div class="card agent">
-        <div class="tag">Level 3</div>
-        <h4>Agent</h4>
-        <p>You give it the goal and the constraints. It reads the situation, picks the right approach, asks when stuck.</p>
-        <p class="feel">You feel like a manager of a competent employee.</p>
-        <p><strong>Best for:</strong> work that has to adapt — different roles, different cases, different judgment calls.</p>
+      <div class="sw">
+        <div class="lbl">Switch 3</div>
+        <h4>Model + effort</h4>
+        <p>Default to <strong>Opus + high</strong>. Stay there until you have a reason to step down.</p>
       </div>
     </div>
-
-    <div class="quote">
-      Chat first. Workflow if you need the same thing every time. Agent only if it has to adapt. Don't reach for an agent when a workflow will do.
-    </div>
-
-    <p>For me, "agent territory" usually means more than one workflow, more than one skill, and the work has to read the situation before it acts. Every step up the ladder costs more — more setup time, more tokens, more debugging surface. Don't pay that cost unless the work needs it.</p>
+    <p class="note">Sonnet is fine for very mechanical tasks. Max effort is for when stakes are high. Opus + high is the right starting point for almost everyone.</p>
   </section>
 
-  <section>
-    <div class="label">What we built</div>
-    <h2>An onboarding agent — fictional company, real shape.</h2>
-    <p>Five skills, two human checkpoints, zero code (just markdown). Works on Claude Code, Codex, Antigravity, or anywhere you can paste markdown into a chat.</p>
-
-    <div class="repo-block">
-      <div class="top">
-        <span class="path">github.com/whoamialt/onboarding-agent</span>
-        <span class="badge">PUBLIC</span>
-      </div>
-      <ul>
-        <li><span class="skill">/learn-company</span> reads company files + intake, drafts a tailored 30-60-90</li>
-        <li><span class="skill">/send-contract</span> drafts the offer letter, stops, asks "send? y/n"</li>
-        <li><span class="skill">/preboard</span> Day -7 → Day 0 with owners (HR, IT, Manager, Agent)</li>
-        <li><span class="skill">/first-day</span> Day 0 morning + Week 1 calendar + manager handoff</li>
-        <li><span class="skill">/thirty-day</span> check-in email + retention indicators (internal section)</li>
-      </ul>
+  <section class="step">
+    <div class="num">STEP 03</div>
+    <h3>Type your goal</h3>
+    <p>Open with this exact phrasing — it works:</p>
+    <div class="prompt">
+      <span class="caret">&gt;</span> I would like to build an agent. My goal is to build an onboarding agent that learns from company information what onboarding requires, and manages every part from the initial contract through the 30-day check-in.
     </div>
-
-    <p>The fictional company is Lattice Loom — Series A B2B SaaS, healthcare-adjacent, hybrid Boston, 35 people. The new hire is Marcus Chen — Senior Backend Engineer, joining a team that carries on-call, has a partner starting a new job the same week, has a 6-month-old at home, has never touched HIPAA. I picked the friction details on purpose. Every onboarding intake I've ever seen has friction in it. I wanted the output to feel real.</p>
-
-    <div class="callout">
-      <strong>The doctrine the whole repo is built on:</strong> agent enforces structure, human keeps judgment. The agent drafts and schedules and surfaces patterns. The human decides on the comp number, the term, the rating, the retention call.
-    </div>
-
-    <p>The repo also has three docs you should read in this order: <a href="https://github.com/whoamialt/onboarding-agent/blob/main/README.md">README</a> (the session companion), <a href="https://github.com/whoamialt/onboarding-agent/blob/main/docs/agent-primer.md">agent-primer.md</a> (the curriculum, written up), and <a href="https://github.com/whoamialt/onboarding-agent/blob/main/docs/why-this-shape.md">why-this-shape.md</a> (every design choice, with the reasoning). If you only read one — read the why-this-shape doc. It's the part that turns the artifact into something you can build your own version of.</p>
+    <p>Specific is better. The more your goal sentence sounds like a sentence you'd say to a new hire, the more useful the agent will be.</p>
   </section>
 
-  <section>
-    <div class="label">How I run it</div>
-    <h2>Model, effort, modes — and the mobile app that changed how I work.</h2>
-
-    <h3>Model + effort level</h3>
-    <p>I default to <strong>Opus + high effort</strong> for most agent work. Opus is reliably better at reasoning, and "high" gives the model enough room to think through complex tasks. For very simple, mechanical procedures — a time tracker, a file mover, an admin script where the steps are obvious — Sonnet is fine and faster and cheaper.</p>
-    <p>I scale effort with how much reasoning the work needs: <strong>high</strong> for synthesis and design, <strong>medium</strong> for execution, <strong>max</strong> only when stakes are high or I'm in front of an audience. For someone starting out: Opus + high is a good default. Stay there until you have a reason to step down.</p>
-
-    <h3>The three run modes</h3>
-    <div class="three-up">
-      <div class="card">
-        <div class="tag">Mode 1</div>
-        <h4>Plan mode</h4>
-        <p>Agent writes a plan, you review, you approve. Then it executes.</p>
-        <p class="feel">Use when the task is new or ambiguous.</p>
-      </div>
-      <div class="card">
-        <div class="tag">Mode 2</div>
-        <h4>Ask permissions</h4>
-        <p>Agent runs but asks before each meaningful action.</p>
-        <p class="feel">Use when you trust the shape but want to stay in the loop.</p>
-      </div>
-      <div class="card">
-        <div class="tag">Mode 3</div>
-        <h4>Auto</h4>
-        <p>Agent runs autonomously. Fast, no interruptions.</p>
-        <p class="feel">Use sparingly — only for procedures you've run many times.</p>
-      </div>
+  <section class="step">
+    <div class="num">STEP 04</div>
+    <h3>Add your definition of done</h3>
+    <p>Same prompt, right after your goal. Say what "good enough" looks like. This is the single biggest thing that has saved me rework.</p>
+    <div class="prompt">
+      <span class="caret">&gt;</span> My definition of done is an MVP that runs the full onboarding lifecycle end-to-end, with the live steps and human checkpoints visible.
     </div>
-    <p style="margin-top:24px;"><strong>The flow I usually run:</strong> plan mode while I'm designing the agent (or anything new) → ask permissions for day-to-day execution → auto mode only for the most well-tested procedures. Plan mode is calibration, not safety. It forces the agent to articulate what it's about to do before it does it, so you catch wrong assumptions before they become wrong outputs.</p>
+  </section>
+
+  <section class="step">
+    <div class="num">STEP 05</div>
+    <h3>Submit. Then answer the agent's questions.</h3>
+    <p>Hit enter. The agent will think for a minute (longer on max effort). Then it usually asks back — <em>"who's the audience? how real should the actions be? any preference on industry?"</em></p>
+    <p>Answer them. This is where the agent gets specific to your context. Don't skip this — the questions it asks are doing real work.</p>
+  </section>
+
+  <section class="step">
+    <div class="num">STEP 06</div>
+    <h3>Review the plan</h3>
+    <p>The agent shows you a plan before it builds anything. Read it. Two checks:</p>
+    <ul>
+      <li>Does this match what I asked for?</li>
+      <li>Is anything missing or overscoped?</li>
+    </ul>
+    <p>If yes, accept. If no, redirect:</p>
+    <div class="prompt">
+      <span class="caret">&gt;</span> I'd like you to start with X instead. <em>(or whatever the change is)</em>
+    </div>
+    <p>Then accept once it's right.</p>
+  </section>
+
+  <section class="step">
+    <div class="num">STEP 07</div>
+    <h3>Allow as it works</h3>
+    <p>The agent now builds. It'll ask permission for each meaningful action — <em>"can I write this file? can I create this folder?"</em> Click allow.</p>
+    <p>If it's a task you trust, click <strong>"always allow this in this project"</strong>. Saves a lot of clicks. Don't do this on your first agent — watch a few permission requests so you understand what it's doing.</p>
+  </section>
+
+  <section class="step">
+    <div class="num">STEP 08</div>
+    <h3>Use it. Then iterate.</h3>
+    <p>When the build finishes, your agent lives in a folder on your machine. To use it, run a skill by typing <code style="font-family:var(--font-mono);background:var(--carbon);color:var(--citron);padding:2px 8px;border-radius:4px;font-size:13px;">/skill-name</code> in the same window.</p>
+    <p>To improve it: rerun the agent on three different inputs, watch where it gets confused, tighten the skill files. Three runs are enough to see what's working.</p>
+  </section>
+
+  <section class="step">
+    <div class="num">STEP 09</div>
+    <h3>(Optional) Save and share</h3>
+    <p>To back it up or share with someone:</p>
+    <div class="prompt">
+      <span class="caret">&gt;</span> Please initialize a git repo in this folder and push to GitHub.
+    </div>
+    <p>The agent will do it. You'll get a URL you can send to anyone.</p>
+  </section>
+
+  <section class="post-steps">
+    <div class="label">Once you've built one</div>
+    <h2>The next things worth knowing.</h2>
 
     <h3>Dispatch — Claude Code on your phone</h3>
-    <p>If you're on Claude Code, install the mobile app — they call it <strong>Dispatch</strong>. It's the thing that has changed how I work the most. Whatever's running on my laptop gets surfaced on my phone, so when an agent stops for a permission check, I see it and can approve, redirect, or pause from anywhere.</p>
-    <p>It keeps the oversight without keeping me chained to the screen. Honestly a little addictive — I've caught myself approving agent runs from the grocery store. Worth it for any work that uses long-running agents with human checkpoints, which is most of it.</p>
+    <p>If you're on Claude Code, install the mobile app. They call it Dispatch. When the agent stops for a permission check, it surfaces on your phone. You can approve, redirect, or pause from anywhere. The thing that has changed how I work the most.</p>
 
-    <div class="callout">
-      <strong>The starter recipe:</strong> Opus, high effort, plan mode for the build, ask permissions for the day-to-day, Dispatch on your phone so you're not stuck at the laptop. That's the whole stack for the first month.
-    </div>
-  </section>
+    <h3>The flow I run after the first build</h3>
+    <p>Plan mode while I'm designing something new → Ask Permissions for day-to-day → Auto only for procedures I've run dozens of times.</p>
 
-  <section>
-    <div class="label">Two more questions you asked</div>
-    <h2>The follow-ups worth answering on paper.</h2>
+    <h3>If your tokens are running out</h3>
+    <p>Install <a href="https://github.com/juliusbrussee/caveman">Caveman</a>. It's a skill (and a discipline) for compressing prompts. The biggest single thing for keeping cost sane on a Pro plan.</p>
 
-    <div class="qa">
-      <p class="q">Are these <span class="chip">.md</span> files Claude-generated, or do I have to add params?</p>
-      <p>Both work — but I almost never download skills and use them as-is. The institutional knowledge is the whole point. What I do instead is work with Claude directly: I tell it what I want a skill to do, what templates I already use, what tone, what checkpoints I want. Then we build it together. The result is a skill that reflects how I work, not how someone else's job worked.</p>
-      <p>The trap I see: people download every skill they can find. Don't do that. It's like starting a new job and being given every internal doc from every team — you remember none of it and use less of it. Build the skills you'll use. Three good ones beat fifty downloaded ones.</p>
-    </div>
+    <h3>The agent we built today</h3>
+    <p><a href="https://github.com/whoamialt/onboarding-agent">github.com/whoamialt/onboarding-agent</a> — clone it, open in your tool, run <code style="font-family:var(--font-mono);background:var(--carbon);color:var(--citron);padding:2px 8px;border-radius:4px;font-size:13px;">/learn-company lattice-loom marcus-chen</code>. Five skills, two human checkpoints, no real client info. A teaching artifact you can fork.</p>
 
-    <div class="qa">
-      <p class="q">My Pro plan runs out of tokens running one daily agent — am I doing something wrong?</p>
-      <p>Probably not, but it depends. How many MCPs is the agent connected to? How big is the context window? How heavy is the task? An agent that pings five tools, reads ten files, and runs a multi-step decision will eat through a Pro plan.</p>
-      <p>The first thing I'd try is <strong><a href="https://github.com/juliusbrussee/caveman">Caveman</a></strong> — a skill (and a discipline) for compressing prompts and tightening what gets loaded into context. Install it if your context windows are running long. It's the highest-leverage thing for keeping token usage sane.</p>
-      <p>Beyond that, Anthropic's plans are roughly Pro at $20/month, the 5x at ~$100, Max at $200, then enterprise. The Max plan isn't unreasonable in a building phase — I'm running Max while I'm actively building and expect that to drop once the heavy build is done. Investing more during the build phase is fine; you'll do less of it in steady state.</p>
-    </div>
-  </section>
+    <h3>To go deeper</h3>
+    <ul>
+      <li><strong><a href="https://x.com/karpathy">Andrej Karpathy</a></strong> — co-founder of OpenAI, ex-Tesla AI, taught Stanford CS231n. The most-recommended AI educator on the internet. Watch his "Intro to LLMs" lecture (1 hr on YouTube). It will change how you think about everything else.</li>
+      <li><strong><a href="https://huggingface.co/learn/agents-course/en/unit0/introduction">HuggingFace Agents Course</a></strong> — the course I took. Free, self-paced.</li>
+      <li><strong><a href="https://www.youtube.com/@howiaipodcast">How I AI</a></strong> — my favorite podcast. Start with <a href="https://www.youtube.com/watch?v=LJ1YZ3Uek3g">this episode</a>.</li>
+      <li><strong><a href="https://github.com/anthropics/skills">Anthropic skills library</a></strong> · <strong><a href="https://skills.gooseworks.ai/">Gooseworks directory</a></strong> — when you're ready to study what other people have built.</li>
+    </ul>
 
-  <section>
-    <div class="label">Resources, with what each is</div>
-    <h2>What to read, watch, and clone.</h2>
-
-    <h3>The hero — Andrej Karpathy</h3>
-    <div class="karpathy">
-      <p class="name-line">Andrej Karpathy</p>
-      <p class="role-line">@karpathy · karpathy.ai · founder, Eureka Labs</p>
-
-      <h4>Who he is</h4>
-      <p>Co-founder of OpenAI. Former director of AI at Tesla. Taught Stanford's CS231n (the deep learning class everyone has watched). Now runs Eureka Labs — an AI-native education company.</p>
-
-      <h4>Why everyone talks about him</h4>
-      <p>He's the most-recommended AI educator on the internet, and the reason is simple: he can be both clear and deep. Most teachers pick one. He does both. Watching him is the closest thing to having a real-world model installed in your head without doing a CS degree.</p>
-
-      <h4>What to watch first</h4>
-      <p>His <strong>Intro to LLMs</strong> lecture (~1hr on YouTube — search "Karpathy Intro to LLMs"). It will change how you think about everything else in this space. No math required, no programming background needed. By the end you'll understand what a model is, why prompts work the way they do, and why some agents fail in ways that will start to feel obvious.</p>
-
-      <h4>If you want to go deeper</h4>
-      <p>His <strong>Zero to Hero</strong> series — eight YouTube videos that build a language model from scratch in Python. Save it for when you want to know the engineering side. Save the rest of his catalog for when you want to fall down a useful rabbit hole.</p>
-    </div>
-
-    <h3>The course I took and recommend</h3>
-    <div class="resource">
-      <div class="name"><a href="https://huggingface.co/learn/agents-course/en/unit0/introduction">HuggingFace Agents Course</a><span class="kind">Free · Self-paced · 6-8 hrs</span></div>
-      <div class="body">
-        <p>The most thorough free course on agents. Goes from first principles up through multi-agent and tool use. I took it because I wanted to make sure my mental models matched what serious researchers in the space were teaching. They mostly did, with a few corrections worth the time.</p>
-        <p>If you want to get serious about building agents, this is where I'd start.</p>
-      </div>
-    </div>
-
-    <h3>The podcast I listen to most</h3>
-    <div class="resource">
-      <div class="name"><a href="https://www.youtube.com/@howiaipodcast">How I AI</a><span class="kind">YouTube · Weekly</span></div>
-      <div class="body">
-        <p>Practitioners showing how they use AI day to day. Not "AI is changing the world" hype — just how they work. Start with <a href="https://www.youtube.com/watch?v=LJ1YZ3Uek3g">this episode</a>, then browse.</p>
-      </div>
-    </div>
-
-    <h3>Skill libraries</h3>
-    <div class="resource">
-      <div class="name"><a href="https://github.com/anthropics/skills">Anthropic skills library</a><span class="kind">GitHub · Reference</span></div>
-      <div class="body"><p>Anthropic's official examples. Read three or four. The pattern clicks fast. It's the canonical "here's what a well-shaped skill looks like" reference.</p></div>
-    </div>
-    <div class="resource">
-      <div class="name"><a href="https://skills.gooseworks.ai/">Gooseworks skills directory</a><span class="kind">Catalog · Browse</span></div>
-      <div class="body"><p>Searchable catalog of community-built skills. Browse it like a cookbook. The most useful thing isn't downloading them — it's seeing how the same patterns repeat across very different domains. Do that for an afternoon and you'll never need a skill template again.</p></div>
-    </div>
-    <div class="resource">
-      <div class="name"><a href="https://github.com/forrestchang/andrej-karpathy-skills">Karpathy-style skills</a><span class="kind">GitHub · Pattern reference</span></div>
-      <div class="body"><p>Community-built skills modeled on Karpathy's teaching style. Useful as a shape reference if you want to encode pedagogical structure into your own skills.</p></div>
-    </div>
-    <div class="resource">
-      <div class="name"><a href="https://github.com/juliusbrussee/caveman">Caveman</a><span class="kind">Tool · Multi-platform</span></div>
-      <div class="body"><p>A multi-platform skill manager AND a pattern for compressing prompt context. Install it if your context windows are running long, or if you're managing skills across Claude Code, Codex, and ChatGPT.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="label">Who to follow</div>
-    <h2>The accounts worth your attention.</h2>
-
-    <div class="follows">
-      <div class="col">
-        <h3>On X (the tight list)</h3>
-        <div class="follow-item">
-          <div class="handle"><a href="https://x.com/karpathy">@karpathy</a></div>
-          <div class="what">Andrej. Teaches in posts. The most-followable account in this space.</div>
-        </div>
-        <div class="follow-item">
-          <div class="handle"><a href="https://x.com/simonw">@simonw</a></div>
-          <div class="what">Simon Willison. Builds AI tools daily, blogs every one of them. Practical, opinionated, prolific.</div>
-        </div>
-        <div class="follow-item">
-          <div class="handle"><a href="https://x.com/emollick">@emollick</a></div>
-          <div class="what">Ethan Mollick, Wharton prof. Best account for AI-in-work framing without engineering depth.</div>
-        </div>
-        <div class="follow-item">
-          <div class="handle"><a href="https://x.com/goodside">@goodside</a></div>
-          <div class="what">Riley Goodside. Prompt engineering practitioner. Gets weird with models in instructive ways.</div>
-        </div>
-        <div class="follow-item">
-          <div class="handle"><a href="https://x.com/swyx">@swyx</a></div>
-          <div class="what">Shawn Wang. AI engineering culture. Runs the Latent Space podcast.</div>
-        </div>
-        <div class="follow-item">
-          <div class="handle"><a href="https://x.com/geoffreylitt">@geoffreylitt</a></div>
-          <div class="what">Geoffrey Litt. Small AI tools, end-user programming. Useful if you're thinking "how do non-engineers build with AI."</div>
-        </div>
-      </div>
-
-      <div class="col">
-        <h3>On TikTok (honestly thin)</h3>
-        <p style="font-size: 14px; color: var(--slate); margin: 0 0 16px;">I don't watch much AI content on TikTok — most of the depth lives on YouTube, X, and Substack. If you're TikTok-first:</p>
-        <div class="follow-item">
-          <div class="handle"><a href="https://www.tiktok.com/@rowancheung">@rowancheung</a></div>
-          <div class="what">Rowan Cheung. Bite-sized AI news. Decent for keeping up without reading.</div>
-        </div>
-        <p style="font-size: 14px; color: var(--slate); margin: 16px 0 0;">For short bites that aren't TikTok, subscribe to <strong>The Rundown AI</strong> — daily email, fast, opinion-light, easy to skim. Same author as Rowan's TikTok.</p>
-
-        <h3 style="margin-top: 32px;">For workshop continuity</h3>
-        <div class="follow-item">
-          <div class="handle"><a href="https://sophielemieux.substack.com">Unsupervised</a></div>
-          <div class="what">My Substack. Practitioner notes on building this stuff — agents, skills, where things break.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="label">What to do this week</div>
-    <h2>Start small. The system shows up later.</h2>
-
-    <ol class="steps">
-      <li><strong>Pick the most repetitive thing on your plate.</strong> Not the most interesting one. The most repetitive.</li>
-      <li><strong>Decide what shape it needs.</strong> Chat? Workflow? Agent? Default to workflow. Step up to agent only if it has to adapt.</li>
-      <li><strong>If it's an agent — clone the repo we built.</strong> Read the README. Run it once with the fake company so you see the structure work. Then start copying the shape onto your real workflow.</li>
-      <li><strong>Write one skill.</strong> Under 80 lines. Use the existing skills as the shape guide. Tell the agent your <em>brief definition of done</em> in the prompt — this is the single coaching tip that has saved me the most rework.</li>
-      <li><strong>Run it three times on three different inputs.</strong> Tighten until variance lives in the creativity, not the procedure.</li>
-    </ol>
-
-    <p>Don't try to build a system upfront. The system shows up after the third or fourth skill, when patterns start to repeat.</p>
-
-    <div class="callout">
-      <strong>Stuck?</strong> Reply to my email with what you tried and where it broke. I learn most from where people get stuck.
-    </div>
+    <h3>Stuck?</h3>
+    <p>Reply to my email with what you tried and where it broke. I learn most from where people get stuck.</p>
   </section>
 
   <footer>
