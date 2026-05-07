@@ -29,6 +29,33 @@ When you build an agent, you're writing the boundaries and pointing it at the lo
 
 ---
 
+## Chat vs workflow vs agent — when to use which
+
+This was the most-asked question in the room: *"What's the difference between a workflow and an agent, and when do I use one versus the other?"* Here's how I think about it.
+
+|  | **Chat** | **Workflow** | **Agent** |
+|---|---|---|---|
+| You give it | A question + context (every time) | A goal + every step in order | A goal + constraints |
+| It gives you | An answer | A repeatable execution | A judgment-aware execution |
+| You feel like | A user | A micromanager | A manager of a skilled employee |
+| Adapts to context? | Per conversation only | No — runs steps as written | Yes — reads, adjusts, asks |
+| Best for | One-off drafts, research, brainstorming | Same procedure every time (laptop order, welcome email, calendar setup) | Tasks that need procedure *and* judgment — where the right steps depend on the situation |
+| Tooling examples | ChatGPT, Claude.ai chat | n8n, Zapier, Cowork routines | Claude Code, Codex, Antigravity |
+
+**My decision rule, in order:**
+
+1. **Chat first.** If I can do it with a single chat (with a good prompt), I do.
+2. **Workflow next.** If it's the same steps every time and I'd rather not run them by hand, I build a workflow. The win is consistency — same procedure, every time.
+3. **Agent only if it has to adapt.** If the steps change based on the situation — different roles need different onboarding paths, different candidates need different outreach, different incidents need different escalation — then I build an agent. Not before.
+
+For me, "agent territory" usually means: more than one workflow, more than one skill, and the work has to adjust to context.
+
+This matters because every step up the ladder costs more — more setup time, more tokens, more debugging surface area. Don't build an agent when a workflow will do.
+
+The metaphor that lands for most people: a workflow makes you a micromanager (you wrote every step). An agent gives you a competent employee (you gave them the goal and the constraints, they figured out the steps). The shift from "managing a process" to "managing a teammate" is the part of agent-building that feels different.
+
+---
+
 ## The three levels — global, project, skill
 
 Every agent runtime I've used (Claude Code, Codex, Antigravity) has the same three layers, even if they call them different things. Get this mental model and you can move between platforms.
@@ -173,11 +200,19 @@ If you want to try it, start with a `multi-platform-orchestration/` folder where
 
 ---
 
-## Plan mode (and why it matters)
+## How to actually run an agent — the three modes
 
-Most agent runtimes have a "plan first" mode that holds all writes until you've approved a plan. Use it. Especially when you're learning.
+Every agent runtime I've used has three running modes. Knowing which to use when is a small thing that saves you a lot of rework.
 
-The reason isn't safety — it's calibration. Plan mode forces the agent to articulate what it's about to do before it does it. You catch wrong assumptions before they become wrong code or wrong emails. After a few weeks of using plan mode, your trust in the agent gets dramatically more accurate, in both directions.
+- **Ask permissions** (recommended starting point) — the agent asks before each action that touches tools or files. Slower, but you stay in the loop. Best for the first few weeks of using a new agent.
+- **Plan mode** — the agent writes a plan, you read it, you approve (or redirect), then it executes. Best for ambiguous or complex tasks where you want to see the reasoning before any work happens.
+- **Auto mode** — the agent runs autonomously. Fast, useful for repetitive procedures you trust. Risky for new or open-ended work; I've had agents in auto mode quietly overwrite things I cared about.
+
+**My typical flow:** plan mode for the build (designing the agent or a new skill), then ask permissions for day-to-day use, then auto mode only for procedures I've already tested dozens of times.
+
+### Why plan mode matters specifically
+
+The reason to use plan mode isn't safety — it's *calibration.* Plan mode forces the agent to articulate what it's about to do before it does it. You catch wrong assumptions before they become wrong code or wrong emails. After a few weeks of using plan mode, your trust in the agent gets dramatically more accurate, in both directions.
 
 In **Claude Code**: `/plan` or shift-tab.
 In **Codex**: similar flag.
@@ -187,10 +222,14 @@ In **Antigravity**: built into the default flow.
 
 ## Definition of done — what a "good" agent looks like
 
-When I'm building an agent and want to stop, I ask:
+There are two places "definition of done" matters, and they're easy to conflate.
 
-1. **Brief definition of done.** Could a colleague read the project rules and a skill and know what success looks like? If not, I haven't written it down well enough.
-2. **Custom pipelines.** Can I run the same skill against different inputs and get coherent outputs? Or does it only work for the one example I built it on?
+**Definition of done as a prompt input.** Tell the agent up front what good looks like. *"My definition of done is: a tailored 30-60-90 plan grounded in the company files, with three role-specific milestones and at least one human checkpoint before any send."* This forces both of you to agree on success before the work starts. It's the single coaching tip that has skipped the most rework for me.
+
+**Definition of done as your evaluation.** When I've built something and want to decide if it's ready, I ask:
+
+1. **Brief done condition exists.** Could a colleague read the project rules and a skill and know what success looks like? If not, I haven't written it down well enough.
+2. **Custom pipelines work.** Can I run the same skill against different inputs and get coherent outputs? Or does it only work for the one example I built it on?
 3. **Reasoning is visible.** When the agent makes a choice I didn't expect, can I see why?
 4. **Consistency.** Run the skill three times on similar inputs. The outputs should rhyme. If they don't, the skill body is too vague.
 
