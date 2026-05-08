@@ -2,7 +2,7 @@
 
 > *A live-build artifact from the First Agent Workshop. Cloning this repo is the closest thing to attending the session.*
 
-This is the agent we built together in the room. It's also the artifact I want you to read alongside the recording — every file in this repo was either written live, referenced in the curriculum, or added afterward to capture something I should have had time to say.
+This is the agent we built together.
 
 If you came here from the workshop email: hi, you're in the right place. Start with [Where to start](#where-to-start) at the bottom.
 
@@ -12,15 +12,11 @@ If you didn't attend and you're trying to learn agent-building from scratch: als
 
 ## About the session
 
-**The session was 60 minutes.** No slides, no pre-work, no installs. Conversational definition curriculum + a live build on screen. Audience was non-technical People Ops practitioners — talent partners, HRBPs, recruiters, founders' first HR hires.
+**The session was 60 minutes.** 
 
 **The premise we worked from:**
 
 > If you do something more than once a day, turn it into a command.
-
-Not "is this AI-shaped?" Not "does this need automation?" Just: am I doing this repeatedly, and is the thinking consistent enough that I could write it down?
-
-If yes, write it down. The "writing it down" part is the agent.
 
 ---
 
@@ -55,8 +51,6 @@ The full curriculum is written up in **[docs/agent-primer.md](docs/agent-primer.
 ## What we didn't cover (and why)
 
 **The orchestration layer.** We got you to the point where you can build an agent and a skill that work *in isolation*. That's the foundation, and it's the part most workshops never even get to.
-
-The part most founders skip — and the part where production deployments fall apart — is orchestration: multiple agents handing off context cleanly, state management across steps, retries that don't loop. No workshop fixes that without real shipping behind it. Worth knowing it exists. We'll cover it separately if there's interest.
 
 ---
 
