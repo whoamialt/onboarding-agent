@@ -31,6 +31,7 @@ We are in-office Tuesday, Wednesday, and Thursday. Mondays and Fridays are offic
 - Home office stipend: $1,500 one-time at hire
 - L&D budget: $2,000/year per person
 - Mental health: Spring Health, 12 sessions free
+- Payroll: semi-monthly through Gusto (15th and last business day of the month)
 
 ## Tools and accounts (Day 1 readiness)
 

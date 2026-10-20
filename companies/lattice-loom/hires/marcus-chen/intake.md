@@ -8,7 +8,7 @@
 - **Level:** L4 (Senior)
 - **Reports to:** Diane Park, VP Engineering
 - **Squad:** Platform (8 engineers)
-- **Start date:** 2026-05-28 (Thursday)
+- **Start date:** 2026-11-19 (Thursday)
 - **Employment type:** Full-time, exempt
 - **Location:** Boston, MA — already lives in Cambridge, will commute
 
@@ -31,7 +31,7 @@
 
 - Sourced via Diane's network (referred by ex-Wayfair colleague)
 - 4 interviews: recruiter screen (Nicole), hiring manager (Diane), 2x technical (Aaron + Platform tech lead Sam)
-- Offer extended verbally May 5; Marcus accepted verbally May 6
+- Offer extended verbally October 13; Marcus accepted verbally October 14
 - Negotiated up from $165K → $175K base
 
 ## Notes from interviews

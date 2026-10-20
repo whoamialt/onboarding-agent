@@ -22,7 +22,7 @@ Lattice Loom builds workforce planning software for healthcare staffing agencies
 - **Priya Raman, CEO** — ex-Cerner product, ex-McKinsey healthcare practice. Boston.
 - **Aaron Mitchell, CTO** — ex-Wayfair (staff eng, scheduling team). Boston.
 - **Diane Park, VP Engineering** — joined September 2025 from Klaviyo. Reports to Aaron. Manages 18 engineers across 3 squads (Platform, Product, Data).
-- **Nicole Peterson, Head of People** — joined December 2025. First HR hire. Reports to Priya. Building everything from scratch right now.
+- **Nicole Peterson, Head of People** — joined December 2025. First HR hire. Reports to Priya. Building everything from scratch right now. nicole@latticeloom.com, (617) 555-0142.
 
 ## Org shape
 
@@ -38,6 +38,7 @@ Lattice Loom builds workforce planning software for healthcare staffing agencies
 - Infra: AWS (us-east-1, multi-AZ), Terraform, GitHub Actions
 - On-call: PagerDuty. Platform team rotates on-call (1 week per engineer, every 8 weeks). Product and Data are not on-call.
 - Tools: Linear (issues), Slack, Notion (docs), Google Workspace, 1Password, Lattice (perf), Gusto (payroll)
+- Work email: firstname@latticeloom.com
 
 ## Compensation philosophy
 
